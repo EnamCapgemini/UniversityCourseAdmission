@@ -20,6 +20,9 @@ import { UniversityStaffUpdateComponent } from './university-staff-update/univer
 import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AdmissionCommiteeMemberCreateComponent } from './admission-commitee-member-create/admission-commitee-member-create.component';
+import { AdmissionCommiteeMemberListComponent } from './admission-commitee-member-list/admission-commitee-member-list.component';
+import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-member-update/admission-commitee-member-update.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { LogoutComponent } from './logout/logout.component';
     UniversityStaffUpdateComponent,
     UniversityStaffListComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdmissionCommiteeMemberCreateComponent,
+    AdmissionCommiteeMemberListComponent,
+    AdmissionCommiteeMemberUpdateComponent
   ],
   imports: [
     BrowserModule,
