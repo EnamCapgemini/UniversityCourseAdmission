@@ -5,13 +5,19 @@ import { ApplicantCreateComponent } from './applicant-create/applicant-create.co
 import { ApplicantListComponent } from './applicant-list/applicant-list.component';
 import { ApplicantUpdateComponent } from './applicant-update/applicant-update.component';
 import { HomeComponent } from './home/home.component';
+import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
+import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
+import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'applicant-create',component:ApplicantCreateComponent},
   {path:'applicant-list',component:ApplicantListComponent},
-  {path:'applicant-update',component:ApplicantUpdateComponent}
+  {path:'applicant-update',component:ApplicantUpdateComponent},
+  {path:'staff-create',component:UniversityStaffCreateComponent},
+  {path:'staff-list',component:UniversityStaffListComponent},
+  {path:'staff-update',component:UniversityStaffUpdateComponent}
 ];
 
 @NgModule({
