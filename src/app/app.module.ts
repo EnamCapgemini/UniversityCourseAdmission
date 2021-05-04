@@ -18,6 +18,11 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
 import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
 import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AdmissionCommiteeMemberCreateComponent } from './admission-commitee-member-create/admission-commitee-member-create.component';
+import { AdmissionCommiteeMemberListComponent } from './admission-commitee-member-list/admission-commitee-member-list.component';
+import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-member-update/admission-commitee-member-update.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { UniversityStaffListComponent } from './university-staff-list/university
     AboutusComponent,
     UniversityStaffCreateComponent,
     UniversityStaffUpdateComponent,
-    UniversityStaffListComponent
+    UniversityStaffListComponent,
+    LoginComponent,
+    LogoutComponent,
+    AdmissionCommiteeMemberCreateComponent,
+    AdmissionCommiteeMemberListComponent,
+    AdmissionCommiteeMemberUpdateComponent
   ],
   imports: [
     BrowserModule,
