@@ -8,7 +8,7 @@ import { Applicant } from 'src/model/applicant';
 })
 export class ApplicantServerService {
 
-  baseUrl: string = "http://localhost:9090/applicants"
+  baseUrl: string = "http://localhost:8082/applicants"
 
   constructor(private http: HttpClient) { }
   getApplicants(): Observable<any> {
