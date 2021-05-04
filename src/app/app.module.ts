@@ -14,9 +14,10 @@ import { ApplicantListComponent } from './applicant-list/applicant-list.componen
 import { ApplicantUpdateComponent } from './applicant-update/applicant-update.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { UniversityStaffsListComponent } from './university-staffs-list/university-staffs-list.component';
+
 import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
 import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
+import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
 
 
 @NgModule({
@@ -30,9 +31,9 @@ import { UniversityStaffUpdateComponent } from './university-staff-update/univer
     ApplicantUpdateComponent,
     HomeComponent,
     AboutusComponent,
-    UniversityStaffsListComponent,
     UniversityStaffCreateComponent,
-    UniversityStaffUpdateComponent
+    UniversityStaffUpdateComponent,
+    UniversityStaffListComponent
   ],
   imports: [
     BrowserModule,
