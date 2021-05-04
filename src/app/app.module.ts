@@ -8,13 +8,19 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseUpdateComponent } from './course-update/course-update.component';
 import { CourseCreateComponent } from './course-create/course-create.component';
+import { UniversityStaffsListComponent } from './university-staffs-list/university-staffs-list.component';
+import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
+import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseListComponent,
     CourseUpdateComponent,
-    CourseCreateComponent
+    CourseCreateComponent,
+    UniversityStaffsListComponent,
+    UniversityStaffCreateComponent,
+    UniversityStaffUpdateComponent
   ],
   imports: [
     BrowserModule,
