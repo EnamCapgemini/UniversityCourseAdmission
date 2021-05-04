@@ -23,6 +23,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { AdmissionCommiteeMemberCreateComponent } from './admission-commitee-member-create/admission-commitee-member-create.component';
 import { AdmissionCommiteeMemberListComponent } from './admission-commitee-member-list/admission-commitee-member-list.component';
 import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-member-update/admission-commitee-member-update.component';
+import { AdmissionCreateComponent } from './admission-create/admission-create.component';
+import { AdmissionListComponent } from './admission-list/admission-list.component';
+import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-mem
     LogoutComponent,
     AdmissionCommiteeMemberCreateComponent,
     AdmissionCommiteeMemberListComponent,
-    AdmissionCommiteeMemberUpdateComponent
+    AdmissionCommiteeMemberUpdateComponent,
+    AdmissionCreateComponent,
+    AdmissionListComponent,
+    AdmissionUpdateComponent
   ],
   imports: [
     BrowserModule,
