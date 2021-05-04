@@ -38,6 +38,6 @@ export class AuthenticationService {
     if (!token)
       return false;
 
-    return tokenNotExpired(null, token);
+    return tokenNotExpired(null,token);
   }
 }
