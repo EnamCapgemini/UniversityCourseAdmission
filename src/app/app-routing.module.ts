@@ -9,16 +9,23 @@ import { UniversityStaffCreateComponent } from './university-staff-create/univer
 import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
 import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
 
+import { LoginComponent } from './login/login.component'
+import { LogoutComponent } from './logout/logout.component'
+
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'applicant-create',component:ApplicantCreateComponent},
   {path:'applicant-list',component:ApplicantListComponent},
   {path:'applicant-update',component:ApplicantUpdateComponent},
+
   {path:'staff-create',component:UniversityStaffCreateComponent},
   {path:'staff-list',component:UniversityStaffListComponent},
-  {path:'staff-update',component:UniversityStaffUpdateComponent}
-];
+  {path:'staff-update',component:UniversityStaffUpdateComponent},
+  {path:'login', component:LoginComponent},
+  {path:'logout',component:LogoutComponent}
+];  
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
