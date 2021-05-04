@@ -11,4 +11,5 @@ export interface Applicant{
     courseId:number;
     address:string;
     emailId:string;
+    gender:string;
 }
