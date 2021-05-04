@@ -14,9 +14,15 @@ import { ApplicantListComponent } from './applicant-list/applicant-list.componen
 import { ApplicantUpdateComponent } from './applicant-update/applicant-update.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { UniversityStaffsListComponent } from './university-staffs-list/university-staffs-list.component';
+
 import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
 import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
+import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AdmissionCommiteeMemberCreateComponent } from './admission-commitee-member-create/admission-commitee-member-create.component';
+import { AdmissionCommiteeMemberListComponent } from './admission-commitee-member-list/admission-commitee-member-list.component';
+import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-member-update/admission-commitee-member-update.component';
 
 
 @NgModule({
@@ -30,9 +36,14 @@ import { UniversityStaffUpdateComponent } from './university-staff-update/univer
     ApplicantUpdateComponent,
     HomeComponent,
     AboutusComponent,
-    UniversityStaffsListComponent,
     UniversityStaffCreateComponent,
-    UniversityStaffUpdateComponent
+    UniversityStaffUpdateComponent,
+    UniversityStaffListComponent,
+    LoginComponent,
+    LogoutComponent,
+    AdmissionCommiteeMemberCreateComponent,
+    AdmissionCommiteeMemberListComponent,
+    AdmissionCommiteeMemberUpdateComponent
   ],
   imports: [
     BrowserModule,
