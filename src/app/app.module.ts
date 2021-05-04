@@ -5,16 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
 import { CourseListComponent } from './course-list/course-list.component';
 import { CourseUpdateComponent } from './course-update/course-update.component';
 import { CourseCreateComponent } from './course-create/course-create.component';
+import { ApplicantCreateComponent } from './applicant-create/applicant-create.component';
+import { ApplicantListComponent } from './applicant-list/applicant-list.component';
+import { ApplicantUpdateComponent } from './applicant-update/applicant-update.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseListComponent,
     CourseUpdateComponent,
-    CourseCreateComponent
+    CourseCreateComponent,
+    ApplicantCreateComponent,
+    ApplicantListComponent,
+    ApplicantUpdateComponent,
+    HomeComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
