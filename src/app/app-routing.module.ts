@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'staff-create', component: UniversityStaffCreateComponent },
   { path: 'staff-list', component: UniversityStaffListComponent },
   { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, },
+
   //{ path: 'staff-update', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
   { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },
@@ -40,11 +41,13 @@ const routes: Routes = [
   { path: 'admission-commitee-member-status', component: AdmissionCommiteeMemberStatusComponent },
   { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
 
-  { path: 'home', component: HomeComponent },
-  { path: 'aboutus', component: AboutusComponent },
-  { path: 'applicant-create', component: ApplicantCreateComponent },
-  { path: 'applicant-list', component: ApplicantListComponent },
-  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent, canActivate: [AuthguardService] },
+
+  {path:'home',component:HomeComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path:'applicant-create',component:ApplicantCreateComponent},
+  {path:'applicant-list',component:ApplicantListComponent},
+  {path:'applicant-update/:applicantId',component:ApplicantUpdateComponent,/*canActivate:[AuthguardService]*/},
+
 
 
   { path: 'course-list', component: CourseListComponent },

@@ -16,11 +16,11 @@ export class ApplicantServerService {
     return this.http.get(this.baseUrl);
   }
   getApplicant(applicantId: number):Observable<any> {
-    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    //const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(`${this.baseUrl}/${applicantId}`)
   }
   updateApplicant(applicant: Applicant):Observable<any> {
-    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    //const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.put(this.baseUrl, applicant, { responseType: 'text' });
   }
   deleteApplicant(appid: number): Observable<any> {
@@ -28,7 +28,7 @@ export class ApplicantServerService {
     return this.http.delete(`${this.baseUrl}/${appid}`, { responseType: 'text' })  // this.baseUrl+"/"+applicantId
   }
   addApplicant(newApp: Applicant) :Observable<any>{
-    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    //const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
   }
 }

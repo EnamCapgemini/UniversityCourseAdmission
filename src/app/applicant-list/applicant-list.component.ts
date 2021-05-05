@@ -3,7 +3,7 @@ import { Applicant } from 'src/model/applicant';
 import { ApplicantServerService } from '../server-service/applicant-server.service';
 
 @Component({
-  selector: 'applicant-list',
+  selector: 'app-applicant-list',
   templateUrl: './applicant-list.component.html',
   styleUrls: ['./applicant-list.component.css']
 })
