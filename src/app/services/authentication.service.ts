@@ -12,7 +12,7 @@ export class AuthenticationService {
   }
 
   login(credentials) {
-    return this.http.post<any>('http://localhost:8082/authenticate', credentials).pipe(
+    return this.http.post<any>('http://localhost:8082/login', credentials).pipe(
       map(
         response => {
           if (response && response.token) {

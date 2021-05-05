@@ -26,6 +26,8 @@ import { AdmissionCommiteeMemberUpdateComponent } from './admission-commitee-mem
 import { AdmissionCreateComponent } from './admission-create/admission-create.component';
 import { AdmissionListComponent } from './admission-list/admission-list.component';
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ChangePasswordComponent } from './change-password/change-password.component'
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { AdmissionUpdateComponent } from './admission-update/admission-update.co
     AdmissionCommiteeMemberUpdateComponent,
     AdmissionCreateComponent,
     AdmissionListComponent,
-    AdmissionUpdateComponent
+    AdmissionUpdateComponent,
+    ProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
