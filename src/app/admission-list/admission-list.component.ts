@@ -9,11 +9,11 @@ import { AdmissionServerService } from '../server-service/admission-server.servi
 })
 export class AdmissionListComponent implements OnInit {
 
-  constructor(private service:AdmissionServerService) { }
+  constructor(private service: AdmissionServerService) { }
 
   header: string = "List of Admissions";
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.loadData();
   }
 
