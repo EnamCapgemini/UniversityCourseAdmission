@@ -8,11 +8,11 @@
             <th>Status</th>
             <th>Action</th>
         </tr>
-        <tr *ngFor='let app of applicants' style='padding:2px'>
-            <td>{{app.admissionId}}</td>
-            <td>{{app.courseId}}</td>
-            <td>{{app.admissionDate}}</td>
-            <td>{{app.status}}</td>
+        <tr *ngFor='let ad of admissions' style='padding:2px'>
+            <td>{{ad.admissionId}}</td>
+            <td>{{ad.courseId}}</td>
+            <td>{{ad.admissionDate}}</td>
+            <td>{{ad.status}}</td>
             <td>
                 <button class='btn btn-danger'
                     (click)='delete(a.admissionId)'>Delete</button>&nbsp;&nbsp;
