@@ -25,7 +25,7 @@ export class CourseServerService {
       //include responseType in options because response by default is JSON
       return this.http.delete(`${this.baseUrl}/${cid}`, { responseType: 'text' })  // this.baseUrl+"/"+eid
     }
-    addCourses(sid: number) :Observable<any>{
-      return this.http.post(`${this.baseUrl}/${sid}`, { responseType: 'text' });
+    addCourses(newCourse: Course) :Observable<any>{
+      return this.http.post(this.baseUrl,newCourse, { responseType: 'text' });
     }
 }

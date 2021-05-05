@@ -15,4 +15,21 @@ export class CourseCreateComponent implements OnInit {
 
   ngOnInit(): void {
     
-  } }
+  } createNew(data: Course) {
+    this.service.addCourses(data).subscribe(
+      (message) => {
+        this.successMessage = message;
+        this.validationMessages = null;
+        this.errorMessage = null;
+      },
+      (failure) => {
+        this.successMessage = null;
+        this.validationMessages = JSON.parse(failure.error).errors;
+        this.errorMessage = JSON.parse(failure.error).errorMessage;
+      }
+
+    )
+
+  }
+
+}

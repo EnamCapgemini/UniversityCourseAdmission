@@ -1,1 +1,78 @@
-<p>course-create works!</p>
+<div class='course'>
+
+    <h3 style="text-align:center"> Create New University Staff</h3>
+    <hr>
+    <form #courseForm='ngForm' (submit)='createNew(courseForm.value)'>
+        <div class='form-group'>
+            <label for='courseId'>Course Id</label>
+            <input id='courseId' class='form-control' type='text' ngModel name='courseId' #tcourseId='ngModel' required>
+        </div>
+        <div *ngIf='tcourseId.touched && tcourseId.invalid' class='alert alert-danger'>
+            Please enter course id. This field is must.
+        </div>
+
+        <div class='form-group'>
+            <label for='courseName'>Course Name</label>
+            <input id='courseName' class='form-control' type='text' ngModel name='courseName' #tcourseName='ngModel' required minlength="6">
+        </div>
+        <div *ngIf='tcourseName.touched && tcourseName.invalid'>
+            <div *ngIf='tcourseName.errors.required' class='alert alert-danger'>
+                Please enter name
+            </div>
+            <div *ngIf='tcourseName.errors.minlength' class='alert alert-danger'>
+                Name must contains atleast 6 characters
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="courseDuration">Course Duration</label>
+            <input type="courseDuration" id='courseDuration' class='form-control' ngModel name='courseDuration' #tcourseDuration='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="courseStartDate">course Start Date</label>
+            <input type="courseStartDate" id='courseStartDate' class='form-control' ngModel name='courseStartDate' #tcourseStartDate='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="courseEndDate">course End Date</label>
+            <input type="courseEndDate" id='courseEndDate' class='form-control' ngModel name='courseEndDate' #tcourseEndDate='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="courseFees">course Fees</label>
+            <input type="courseFees" id='courseFees' class='form-control' ngModel name='courseFees' #tcourseFees='ngModel' />
+        </div>
+
+
+        <!--<div class='form-group'>
+            <label for='role'>Role</label>
+            <select id='role' class="form-control" ngModel name='staffrole' #tstaffrole='ngModel' aria-label="Default selected Role" required>
+                <option disabled>Choose Your Role</option>
+                <option *ngFor='let role of roles' [value]="role.id">
+                    {{role.name}}
+                </option>
+            </select>
+        </div>
+        <div *ngIf='tstaffrole.touched && tstaffrole.invalid'>
+            <div *ngIf='tstaffrole.errors.required' class='alert alert-danger'>
+                Please enter staff role
+            </div>
+        </div>-->
+
+
+        <button type='submit' class='btn btn-primary btn-block' [disabled]="courseForm.invalid">Submit</button>
+    </form>
+
+    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
