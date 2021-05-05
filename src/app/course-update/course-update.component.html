@@ -3,7 +3,7 @@
         <table class='table'>
             <tr>
                 <td>Course Id</td>
-                <td><input type='text' [(ngModel)]='course.courseId' readonly></td>
+                <td><input type='number' [(ngModel)]='course.courseId' readonly></td>
             </tr>
             <tr>
                 <td>Course Name</td>
@@ -15,15 +15,15 @@
             </tr>
             <tr>
                 <td>Course Start Date</td>
-                <td><input type='text' [(ngModel)]='course.courseStartDate'></td>
+                <td><input type='date' [(ngModel)]='course.courseStartDate'></td>
             </tr>
             <tr>
                 <td>Course End Date</td>
-                <td><input type='text' [(ngModel)]='course.courseEndDate'></td>
+                <td><input type='date' [(ngModel)]='course.courseEndDate'></td>
             </tr>
             <tr>
                 <td>Course Fees</td>
-                <td><input type='text' [(ngModel)]='course.courseFees'></td>
+                <td><input type='number' [(ngModel)]='course.courseFees'></td>
             </tr>
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
