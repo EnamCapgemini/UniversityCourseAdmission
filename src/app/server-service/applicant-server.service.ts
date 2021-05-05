@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Applicant } from 'src/model/applicant';
@@ -12,19 +12,23 @@ export class ApplicantServerService {
 
   constructor(private http: HttpClient) { }
   getApplicants(): Observable<any> {
+    //const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(this.baseUrl);
   }
   getApplicant(applicantId: number):Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.get(`${this.baseUrl}/${applicantId}`)
   }
   updateApplicant(applicant: Applicant):Observable<any> {
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.put(this.baseUrl, applicant, { responseType: 'text' });
   }
-  deleteApplicant(applicantId: number): Observable<any> {
-    //include responseType in options because response by default is JSON
-    return this.http.delete(`${this.baseUrl}/${applicantId}`, { responseType: 'text' })  // this.baseUrl+"/"+applicantId
+  deleteApplicant(appid: number): Observable<any> {
+    //const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
+    return this.http.delete(`${this.baseUrl}/${appid}`, { responseType: 'text' })  // this.baseUrl+"/"+applicantId
   }
   addApplicant(newApp: Applicant) :Observable<any>{
+    const headers = new HttpHeaders({ Authorization: localStorage.getItem('token') });
     return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
   }
 }

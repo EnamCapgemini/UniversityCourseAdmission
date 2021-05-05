@@ -28,12 +28,6 @@ import { AdmissionCreateComponent } from './admission-create/admission-create.co
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'aboutus', component: AboutusComponent },
-
-  { path: 'applicant-create', component: ApplicantCreateComponent },
-  { path: 'applicant-list', component: ApplicantListComponent },
-  { path: 'applicant-update', component: ApplicantUpdateComponent, canActivate: [AuthguardService] },
 
   { path: 'staff-create', component: UniversityStaffCreateComponent },
   { path: 'staff-list', component: UniversityStaffListComponent },
@@ -43,6 +37,13 @@ const routes: Routes = [
   { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },
   { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent },
   { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
+
+  {path:'home',component:HomeComponent},
+  {path:'aboutus',component:AboutusComponent},
+  {path:'applicant-create',component:ApplicantCreateComponent},
+  {path:'applicant-list',component:ApplicantListComponent},
+  {path:'applicant-update/:applicantId',component:ApplicantUpdateComponent,canActivate:[AuthguardService]},
+
 
   { path:'course-list',component:CourseListComponent},
   { path:'course-create',component:CourseCreateComponent},
