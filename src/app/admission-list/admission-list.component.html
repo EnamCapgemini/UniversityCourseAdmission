@@ -4,7 +4,6 @@
         <tr>
             <th>Admission Id</th>
             <th>Course Id</th>
-            <th>Applicant Id</th>
             <th>Admission Date</th>
             <th>Status</th>
             <th>Action</th>
@@ -12,7 +11,6 @@
         <tr *ngFor='let app of applicants' style='padding:2px'>
             <td>{{app.admissionId}}</td>
             <td>{{app.courseId}}</td>
-            <td>{{app.applicantId}}</td>
             <td>{{app.admissionDate}}</td>
             <td>{{app.status}}</td>
             <td>
