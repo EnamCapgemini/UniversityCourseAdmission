@@ -8,21 +8,28 @@ import { HomeComponent } from './home/home.component';
 import { UniversityStaffCreateComponent } from './university-staff-create/university-staff-create.component';
 import { UniversityStaffListComponent } from './university-staff-list/university-staff-list.component';
 import { UniversityStaffUpdateComponent } from './university-staff-update/university-staff-update.component';
+import { AuthguardService } from './services/authguard.service';
 
 import { LoginComponent } from './login/login.component'
 import { LogoutComponent } from './logout/logout.component'
+import { ProfileComponent } from './profile/profile.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'aboutus',component:AboutusComponent},
   {path:'applicant-create',component:ApplicantCreateComponent},
   {path:'applicant-list',component:ApplicantListComponent},
-  {path:'applicant-update',component:ApplicantUpdateComponent},
+  {path:'applicant-update',component:ApplicantUpdateComponent,canActivate:[AuthguardService]},
 
   {path:'staff-create',component:UniversityStaffCreateComponent},
   {path:'staff-list',component:UniversityStaffListComponent},
   {path:'staff-update/:staffId',component:UniversityStaffUpdateComponent},
+  {path:'staff-update',component:UniversityStaffUpdateComponent,canActivate:[AuthguardService]},
+
+  {path:'profile', component:ProfileComponent},
   {path:'login', component:LoginComponent},
+  {path:'changePassword', component:ChangePasswordComponent},
   {path:'logout',component:LogoutComponent}
 ];  
 

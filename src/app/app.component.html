@@ -44,8 +44,16 @@
                 </div>
             </div>
 
-            <button type="button" routerLink="login" class="btn btn-primary">Login</button>
-            <button type="button" routerLink="logout" class="btn btn-primary">Logout</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">User
+                </button>
+                <div class="dropdown-menu" style="background-color: wheat;">     
+                    <a routerLink="profile" class="dropdown-item">Profile</a> 
+                    <a routerLink="login" class="dropdown-item">Login</a>      
+                    <a routerLink="changePassword" class="dropdown-item">Change Password</a>
+                    <a routerLink="logout" class="dropdown-item">Logout</a>
+                 </div>
+            </div>
 
         </div>
     </nav>
