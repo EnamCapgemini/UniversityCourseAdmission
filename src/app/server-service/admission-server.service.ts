@@ -8,23 +8,23 @@ import { Admission } from 'src/model/admission';
 })
 export class AdmissionServerService {
 
-  baseUrl: string = "http://localhost:8082/admissions"
+  baseUrl: string = "http://localhost:8082/Admission"
 
   constructor(private http: HttpClient) { }
   getAdmissions(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
-  getAdmission(admissionId: number):Observable<any> {
+  getAdmission(admissionId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${admissionId}`)
   }
-  updateAdmission(admission: Admission):Observable<any> {
+  updateAdmission(admission: Admission): Observable<any> {
     return this.http.put(this.baseUrl, admission, { responseType: 'text' });
   }
   deleteAdmission(admissionId: number): Observable<any> {
     //include responseType in options because response by default is JSON
     return this.http.delete(`${this.baseUrl}/${admissionId}`, { responseType: 'text' })  // this.baseUrl+"/"+applicantId
   }
-  addAdmission(newApp: Admission) :Observable<any>{
+  addAdmission(newApp: Admission): Observable<any> {
     return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
   }
 }

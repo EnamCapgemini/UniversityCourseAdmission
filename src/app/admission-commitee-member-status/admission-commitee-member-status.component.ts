@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Admission } from 'src/model/admission';
+import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
+import { Status } from 'src/model/status';
+import { AdmissionCommiteeMemberServerService } from '../server-service/admission-commitee-member-server.service';
 import { AdmissionServerService } from '../server-service/admission-server.service';
 
 @Component({
@@ -10,13 +13,14 @@ import { AdmissionServerService } from '../server-service/admission-server.servi
 })
 export class AdmissionCommiteeMemberStatusComponent implements OnInit {
 
+  admissionCommiteeMember: AdmissionCommiteeMember = null;
   admission: Admission = null;
-
+  status: Status = null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
 
-  constructor(private service: AdmissionServerService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: AdmissionCommiteeMemberServerService, private service2: AdmissionServerService, private router: Router) { } // private route: ActivatedRoute,
 
   ngOnInit() {
 
@@ -34,10 +38,13 @@ export class AdmissionCommiteeMemberStatusComponent implements OnInit {
     //     )
     //   }
     // )
+
+    this.loadData();
+
   }
 
   updated() {
-    this.service.updateAdmission(this.admission).subscribe(
+    this.service.updateAdmissionStatus(this.admission.admissionId, this.admission.status).subscribe(
       (message) => {
         this.successMessage = message
         this.validationMessages = null
@@ -57,4 +64,16 @@ export class AdmissionCommiteeMemberStatusComponent implements OnInit {
     this.router.navigate(["admission-commitee-member-list"]);
   }
 
+  loadData(): void {
+
+    this.service2.getAdmissions().subscribe(
+      (data) => {
+        this.admission = data;
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.errorMessage;
+      }
+    )
+  }
 }

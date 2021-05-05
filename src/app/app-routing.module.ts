@@ -42,11 +42,11 @@ const routes: Routes = [
   { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
 
 
-  {path:'home',component:HomeComponent},
-  {path:'aboutus',component:AboutusComponent},
-  {path:'applicant-create',component:ApplicantCreateComponent},
-  {path:'applicant-list',component:ApplicantListComponent},
-  {path:'applicant-update/:applicantId',component:ApplicantUpdateComponent,/*canActivate:[AuthguardService]*/},
+  { path: 'home', component: HomeComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'applicant-create', component: ApplicantCreateComponent },
+  { path: 'applicant-list', component: ApplicantListComponent },
+  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent,/*canActivate:[AuthguardService]*/ },
 
 
 
@@ -61,7 +61,7 @@ const routes: Routes = [
 
   { path: 'admission-create', component: AdmissionCreateComponent },
   { path: 'admission-list', component: AdmissionListComponent },
-  { path: 'admission-update', component: AdmissionUpdateComponent, canActivate: [AuthguardService] },
+  { path: 'admission-update', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService]*/ },
 
 ];
 

@@ -9,10 +9,10 @@
                 <td>Admission Status</td>
                 <td><select name="status" [(ngModel)]='admission.status'>
                         <option value="" disabled>Choose a status</option>
-                        <option [ngValue]="APPLIED">APPLIED</option>
-                        <option [ngValue]="PENDING">PENDING</option>
-                        <option [ngValue]="CONFIRMED">CONFIRMED</option>
-                        <option [ngValue]="REJECTED">REJECTED</option>
+                        <option value="APPLIED">APPLIED</option>
+                        <option value="PENDING">PENDING</option>
+                        <option value="CONFIRMED">CONFIRMED</option>
+                        <option value="REJECTED">REJECTED</option>
                     </select></td>
             </tr>
         </table>
