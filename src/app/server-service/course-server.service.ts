@@ -7,9 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class CourseServerService { 
 
-  baseUrl:string="http://localhost:8082/Courses"
 
   constructor(private http:HttpClient) { }
+  baseUrl:string="http://localhost:8082/Courses"
+
     getCourses(): Observable<any> {
       return this.http.get(this.baseUrl);
     }
