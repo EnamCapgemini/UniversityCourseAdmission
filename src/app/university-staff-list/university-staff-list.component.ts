@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UniversityStaffs } from 'src/model/universityStaffs';
+import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 
 @Component({
   selector: 'app-university-staff-list',
@@ -6,10 +8,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./university-staff-list.component.css']
 })
 export class UniversityStaffListComponent implements OnInit {
+  constructor(private service: UniversityStaffServerService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loadData();
   }
 
+  header: string = "List of University Staff Members";
+
+  employees: UniversityStaffs[];
+  message: string = null;
+  errorMessage: string = null;
+
+  delete(staffId: number): void {
+    this.service.deleteStaff(staffId).subscribe(
+      (response) => {
+        this.message = response;
+        this.loadData();
+      },
+      (error) => console.log(error)
+    );
+
+  }
+
+  loadData(): void {
+
+    this.service.getStaffs().subscribe(
+      (data) => {
+        this.employees = data;
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.errorMessage;
+      }
+    )
+  }
 }

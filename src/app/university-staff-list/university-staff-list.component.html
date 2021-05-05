@@ -1,1 +1,27 @@
-<p>university-staff-list works!</p>
+<div class='maindiv' *ngIf='errorMessage == null'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table'>
+        <tr>
+            <th>EMP ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>ACTION</th>
+        </tr>
+        <tr *ngFor='let emp of employees' style='padding:2px'>
+            <td>{{emp.empid}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>
+                <button class='btn btn-danger' (click)='delete(emp.empid)'>Delete</button>
+                <a [routerLink]="['/update',emp.empid]" class='btn btn-primary'>Modify</a>
+            </td>
+        </tr>
+    </table>
+
+    <div *ngIf='message != null' (click)='message=null' class='alert alert-success'>
+        {{message}}
+    </div>
+</div>
+<div class='alert alert-danger' *ngIf='errorMessage != null'>
+    <h2>{{errorMessage}}</h2>
+</div>
