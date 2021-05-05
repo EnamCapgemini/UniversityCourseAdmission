@@ -11,6 +11,9 @@ import { UniversityStaffUpdateComponent } from './university-staff-update/univer
 
 import { LoginComponent } from './login/login.component'
 import { LogoutComponent } from './logout/logout.component'
+import { CourseListComponent } from './course-list/course-list.component';
+import { CourseCreateComponent } from './course-create/course-create.component';
+import { CourseUpdateComponent } from './course-update/course-update.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -23,7 +26,11 @@ const routes: Routes = [
   {path:'staff-list',component:UniversityStaffListComponent},
   {path:'staff-update/:staffId',component:UniversityStaffUpdateComponent},
   {path:'login', component:LoginComponent},
-  {path:'logout',component:LogoutComponent}
+  {path:'logout',component:LogoutComponent},
+{path:'course-list',component:CourseListComponent},
+{path:'course-create',component:CourseCreateComponent},
+{path:'course-update',component:CourseUpdateComponent}
+
 ];  
 
 
