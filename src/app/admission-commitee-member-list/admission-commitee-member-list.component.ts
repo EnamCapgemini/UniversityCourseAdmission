@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
+import { AdmissionCommiteeMemberServerService } from '../server-service/admission-commitee-member-server.service';
 
 @Component({
   selector: 'app-admission-commitee-member-list',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmissionCommiteeMemberListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AdmissionCommiteeMemberServerService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loadData();
+  }
+  admissionCommiteeMembers: AdmissionCommiteeMember[];
+  message: string = null;
+  errorMessage: string = null;
+
+  delete(admissionCommiteeMemberId: number): void {
+    this.service.deleteApplicant(admissionCommiteeMemberId).subscribe(
+      (response) => {
+        this.message = response;
+        this.loadData();
+      },
+      (error) => console.log(error)
+    );
+
+  }
+
+  loadData(): void {
+
+    this.service.getAdmissionComiteeMembers().subscribe(
+      (data) => {
+        this.admissionCommiteeMembers = data;
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.errorMessage;
+      }
+    )
   }
 
 }

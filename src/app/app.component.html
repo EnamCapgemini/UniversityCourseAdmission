@@ -1,34 +1,34 @@
 <div class="container">
-<h1>{{title}}</h1>
-<hr>
-<nav class="navbar navbar-expand-lg navbar-dark primary-color"> 
-    <div class="btn-group">
-        <button type="button" routerLink="home" class="btn btn-primary">Home</button>
-        <button type="button" routerLink="aboutus" class="btn btn-primary">About Us</button>
+    <h1>{{title}}</h1>
+    <hr>
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
         <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Applicant
-            </button>
-            <div class="dropdown-menu">     
-                <a routerLink="applicant-create" class="dropdown-item">Create Applicant</a> 
-                <a routerLink="applicant-list" class="dropdown-item">Applicant List</a>      
-                <a routerLink="applicant-update" class="dropdown-item">Update Applicant</a>
+            <button type="button" routerLink="home" class="btn btn-primary">Home</button>
+            <button type="button" routerLink="aboutus" class="btn btn-primary">About Us</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Applicant
+                </button>
+                <div class="dropdown-menu">
+                    <a routerLink="applicant-create" class="dropdown-item">Create Applicant</a>
+                    <a routerLink="applicant-list" class="dropdown-item">Applicant List</a>
+                    <a routerLink="applicant-update" class="dropdown-item">Update Applicant</a>
+                </div>
             </div>
-        </div>
 
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">University Staff
-            </button>
-            <div class="dropdown-menu">     
-                <a routerLink="staff-create" class="dropdown-item">Create University Staff</a> 
-                <a routerLink="staff-list" class="dropdown-item">University Staff List</a>      
-                <a routerLink="staff-update" class="dropdown-item">Update University Staff</a>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">University Staff
+                </button>
+                <div class="dropdown-menu">
+                    <a routerLink="staff-create" class="dropdown-item">Create University Staff</a>
+                    <a routerLink="staff-list" class="dropdown-item">University Staff List</a>
+                    <a routerLink="staff-update" class="dropdown-item">Update University Staff</a>
+                </div>
             </div>
+
+            <button type="button" routerLink="login" class="btn btn-primary">Login</button>
+            <button type="button" routerLink="logout" class="btn btn-primary">Logout</button>
+
         </div>
-
-        <button type="button" routerLink="login" class="btn btn-primary">Login</button>
-        <button type="button" routerLink="logout" class="btn btn-primary">Logout</button>
-
-    </div>
-</nav>
-<router-outlet></router-outlet>
+    </nav>
+    <router-outlet></router-outlet>
 </div>
