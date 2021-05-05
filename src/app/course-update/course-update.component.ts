@@ -47,7 +47,7 @@ export class CourseUpdateComponent implements OnInit {
         this.validationMessages = JSON.parse(failure.error).errors;
         this.errorMessage = JSON.parse(failure.error).errorMessage;
       }
-
+  
     )
 
   }
