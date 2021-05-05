@@ -54,6 +54,6 @@ export class CourseUpdateComponent implements OnInit {
 
 
   goBack(){
-    this.router.navigate(["courselist"]);
+    this.router.navigate(["course-list"]);
   }
 }
