@@ -1,1 +1,25 @@
-<p>admission-list works!</p>
+<div class='maindiv' *ngIf='errorMessage == null'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table table-striped table-bordered'>
+        <tr>
+            <th>Admission Id</th>
+            <th>Course Id</th>
+            <th>Applicant Id</th>
+            <th>Admission Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor='let app of applicants' style='padding:2px'>
+            <td>{{app.admissionId}}</td>
+            <td>{{app.courseId}}</td>
+            <td>{{app.applicantId}}</td>
+            <td>{{app.admissionDate}}</td>
+            <td>{{app.status}}</td>
+            <td>
+                <button class='btn btn-danger'
+                    (click)='delete(a.admissionId)'>Delete</button>&nbsp;&nbsp;
+                <a [routerLink]="['/update',a.admissionId]" class='btn btn-primary'>Modify</a>
+            </td>
+        </tr>
+    </table>
+</div>
