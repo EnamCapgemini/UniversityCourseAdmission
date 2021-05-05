@@ -1,1 +1,68 @@
-<p>applicant-update works!</p>
+<div class="app">
+    <div *ngIf='applicant!=null'>
+        <table class="table">
+            <tr>
+                <td>Applicant Id</td>
+                <td><input type='text' [(ngModel)]='applicant.applicantId' readonly></td>
+            </tr>
+            <tr>
+                <td>Username </td>
+                <td><input type='text' [(ngModel)]='applicant.username'></td>
+            </tr>
+            <tr>
+                <td>Role </td>
+                <td><input type='text' [(ngModel)]='applicant.role'></td>
+            </tr>
+            <tr>
+                <td>Applicant First Name </td>
+                <td><input type='text' [(ngModel)]='applicant.applicantFirstName'></td>
+            </tr>
+            <tr>
+                <td>Applicant Last Name </td>
+                <td><input type='text' [(ngModel)]='applicant.applicantLastName'></td>
+            </tr>
+            <tr>
+                <td>Mobile Number </td>
+                <td><input type='text' [(ngModel)]='applicant.mobileNumber'></td>
+            </tr>
+            <tr>
+                <td>Applicant Degree</td>
+                <td><input type='text' [(ngModel)]='applicant.applicantDegree'></td>
+            </tr>
+            <tr>
+                <td>Applicant Graduation Percent</td>
+                <td><input type='text' [(ngModel)]='applicant.applicantGraduationPercent'></td>
+            </tr>
+            <tr>
+                <td>Course Id</td>
+                <td><input type='text' [(ngModel)]='applicant.courseId'></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type='text' [(ngModel)]='applicant.address'></td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type='text' [(ngModel)]='applicant.emailId'></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type='text' [(ngModel)]='applicant.gender'></td>
+            </tr>
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+    </div>
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
