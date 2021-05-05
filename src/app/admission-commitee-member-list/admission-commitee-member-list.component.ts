@@ -12,7 +12,7 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
   constructor(private service: AdmissionCommiteeMemberServerService) { }
 
   ngOnInit(): void {
-    //this.loadData();
+    this.loadData();
   }
 
   header: string = "List of Admission Commitee Members";
@@ -24,7 +24,6 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
 
   delete(admissionCommiteeMemberId: number): void {
     this.service.deleteAdmissionCommiteeMember(admissionCommiteeMemberId).subscribe(
-
       (response) => {
         this.message = response;
         this.loadData();

@@ -27,5 +27,6 @@ export class AdmissionCommiteeMemberServerService {
   }
   addAdmissionCommiteeMember(newAdmissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.post(this.baseUrl, newAdmissionCommiteeMember, { responseType: 'text' });
+
   }
 }
