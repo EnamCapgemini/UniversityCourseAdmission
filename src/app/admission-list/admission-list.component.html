@@ -15,8 +15,8 @@
             <td>{{ad.status}}</td>
             <td>
                 <button class='btn btn-danger'
-                    (click)='delete(a.admissionId)'>Delete</button>&nbsp;&nbsp;
-                <a [routerLink]="['/update',a.admissionId]" class='btn btn-primary'>Modify</a>
+                    (click)='delete(ad.admissionId)'>Delete</button>&nbsp;&nbsp;
+                <a [routerLink]="['/update',ad.admissionId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
     </table>
