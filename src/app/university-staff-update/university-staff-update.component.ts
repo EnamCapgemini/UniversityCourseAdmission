@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
@@ -15,13 +16,19 @@ export class UniversityStaffUpdateComponent implements OnInit {
   errorMessage: string = null;
   successMessage: string = null;
   
+  roles: any[] = [
+    { id: 1, name: 'STAFF' },
+    { id: 2, name: 'COMMITTEE' }
+  ];
+
+ 
   constructor(private service: UniversityStaffServerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(
       (params) => {
-        let staffid: number = +params.get('empid');
+        let staffid: number = +params.get('staffId');
 
         this.service.getStaff(staffid).subscribe(
           (data) => {
@@ -35,7 +42,16 @@ export class UniversityStaffUpdateComponent implements OnInit {
     )
   }
 
+
+  updatedRole(event:string){
+    if(event=="STAFF" || event=="COMMITTEE")
+      return true;
+      else
+      return false;
+  }
+
   updated() {
+    if(this.updatedRole){
     this.service.updateStaff(this.staff).subscribe(
       (message) => {
         this.successMessage=message
@@ -49,7 +65,7 @@ export class UniversityStaffUpdateComponent implements OnInit {
       }
 
     )
-
+    }
   }
 
 

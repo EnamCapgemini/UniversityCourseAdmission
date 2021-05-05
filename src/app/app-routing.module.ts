@@ -31,7 +31,7 @@ const routes: Routes = [
 
   { path: 'staff-create', component: UniversityStaffCreateComponent },
   { path: 'staff-list', component: UniversityStaffListComponent },
-  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent,  },
+  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent },
   //{ path: 'staff-update', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
   { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },

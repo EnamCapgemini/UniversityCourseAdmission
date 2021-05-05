@@ -13,9 +13,10 @@
             <td>{{staff.role}}</td>
             <td>
                 <button class='btn btn-danger' (click)='delete(staff.staffId)'>Delete</button>&nbsp;&nbsp;
-                <a [routerLink]="['/update',staff.staffId]" class='btn btn-primary'>Modify</a>
+                <a [routerLink]="['/staff-update',staff.staffId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
+
     </table>
 
     <div *ngIf='message != null' (click)='message=null' class='alert alert-success text-center'>
