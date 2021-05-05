@@ -11,6 +11,8 @@ export class ApplicantListComponent implements OnInit {
 
   constructor(private service: ApplicantServerService) { }
 
+  header: string = "List of Applicants";
+
   ngOnInit(): void {
     this.loadData();
   }

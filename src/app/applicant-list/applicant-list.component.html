@@ -1,1 +1,35 @@
-<p>applicant-list works!</p>
+<div class='maindiv' *ngIf='errorMessage == null'>
+    <h3 style='text-align:center;'>{{header}}</h3>
+    <table class='table'>
+        <tr>
+            <th>Applicant Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Applicant First Name</th>
+            <th>Applicant Last Name</th>
+            <th>Mobile Number</th>
+            <th>ApplicantDegree</th>
+            <th>Applicant Graduation Percent</th>
+            <th>Course Id</th>
+            <th>Address</th>
+            <th>Email Id</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor='let app of applicants' style='padding:2px'>
+            <td>{{app.applicantId}}</td>
+            <td>{{app.username}}</td>
+            <td>{{app.password}}</td>
+            <td>{{app.role}}</td>
+            <td>{{app.applicantFirstName}}</td>
+            <td>{{app.applicantLastName}}</td>
+            <td>{{app.mobileNumber}}</td>
+            <td>{{app.applicantDegree}}</td>
+            <td>{{app.applicantGraduationPercent}}</td>
+            <td>{{app.courseId}}</td>
+            <td>{{app.address}}</td>
+            <td>{{app.emailId}}</td>
+            <td>{{app.gender}}</td>
+        </tr>
+    </table>
+</div>
