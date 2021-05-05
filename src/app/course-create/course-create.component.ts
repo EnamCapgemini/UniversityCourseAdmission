@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/model/course';
+import { CourseServerService } from '../server-service/course-server.service';
 
 @Component({
   selector: 'app-course-create',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-create.component.css']
 })
 export class CourseCreateComponent implements OnInit {
-
-  constructor() { }
+  validationMessages: string[] = null;
+  errorMessage: string = null;
+  successMessage: string = null;
+  constructor(private service:CourseServerService) { }
 
   ngOnInit(): void {
-  }
-
-}
+    
+  } }
