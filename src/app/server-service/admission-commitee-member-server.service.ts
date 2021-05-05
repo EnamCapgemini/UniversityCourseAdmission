@@ -15,7 +15,7 @@ export class AdmissionCommiteeMemberServerService {
     return this.http.get(this.baseUrl);
   }
   getAdmissionCommiteeMember(admissionCommiteeMemberId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${admissionCommiteeMemberId}`)
+    return this.http.get(`${this.baseUrl}/getUserByAdmissionCommiteeMemberId/${admissionCommiteeMemberId}`)
   }
   updateAdmissionCommiteeMember(admissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.put(this.baseUrl, admissionCommiteeMember, { responseType: 'text' });

@@ -1,1 +1,35 @@
-<p>admission-commitee-member-update works!</p>
+<div class='commitee'>
+    <div *ngIf='admissionCommiteeMember!= null'>
+        <table class='table'>
+            <tr>
+                <td>Admission Commitee Member Id</td>
+                <td><input type='text' [(ngModel)]='admissionCommiteeMember.admissionCommiteeMemberId' readonly></td>
+            </tr>
+            <tr>
+                <td>Admission Commitee Member Name</td>
+                <td><input type='text' [(ngModel)]='admissionCommiteeMember.admissionCommiteeMemberName'></td>
+            </tr>
+            <tr>
+                <td>Admission Commitee Member Contact</td>
+                <td><input type='text' [(ngModel)]='admissionCommiteeMember.admissionCommiteeMemberContact'></td>
+            </tr>
+        </table>
+        <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
+        <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
+
+        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+            {{successMessage}}
+        </p>
+    </div>
+
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>

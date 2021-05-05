@@ -14,7 +14,8 @@
             <td>
                 <button class='btn btn-danger'
                     (click)='delete(acm.admissionCommiteeMemberId)'>Delete</button>&nbsp;&nbsp;
-                <a [routerLink]="['/update',acm.admissionCommiteeMemberId]" class='btn btn-primary'>Modify</a>
+                <a [routerLink]="['/admission-commitee-member-update',acm.admissionCommiteeMemberId]"
+                    class='btn btn-primary'>Modify</a>
             </td>
         </tr>
     </table>
