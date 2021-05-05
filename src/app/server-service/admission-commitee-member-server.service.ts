@@ -22,7 +22,7 @@ export class AdmissionCommiteeMemberServerService {
   }
   deleteAdmissionCommiteeMember(admissionCommiteeMemberId: number): Observable<any> {
     //include responseType in options because response by default is JSON
-    return this.http.delete(`${this.baseUrl}/${admissionCommiteeMemberId}`, { responseType: 'text' })  // this.baseUrl+"/"+admissionCommiteeMemberId
+    return this.http.delete(`${this.baseUrl}/deleteUserByAdmissionCommiteeMemberId/${admissionCommiteeMemberId}`, { responseType: 'text' })  // this.baseUrl+"/"+admissionCommiteeMemberId
   }
   addAdmissionCommiteeMember(newAdmissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.post(this.baseUrl, newAdmissionCommiteeMember, { responseType: 'text' });

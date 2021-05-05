@@ -1,1 +1,50 @@
-<p>admission-commitee-member-create works!</p>
+<div class='commitee'>
+
+    <h3 style="text-align:center"> Create Admission Commitee Member</h3>
+
+    <form #commiteeForm='ngForm' (submit)='createNew(commiteeForm.value)'>
+        <div class='form-group'>
+            <label for='acmid'>Admission Commitee Member Id</label>
+            <input id='acmid' class='form-control' type='text' ngModel name='admissionCommiteeMemberId' #tid='ngModel'
+                required>
+        </div>
+        <div *ngIf='tid.touched && tid.invalid' class='alert alert-danger'>
+            Please enter admission commitee member id. This field required
+        </div>
+
+        <div class='form-group'>
+            <label for='nm'>Admission Commitee Member Name</label>
+            <input id='nm' class='form-control' type='text' ngModel name='admissionCommiteeMemberName' #tname='ngModel'
+                required>
+        </div>
+        <div *ngIf='tname.touched && tname.invalid'>
+            <div *ngIf='tname.errors.required' class='alert alert-danger'>
+                Please enter name
+            </div>
+
+        </div>
+        <div class='form-group'>
+            <label for='con'>Admission Commitee Member Contact</label>
+            <input id='con' class='form-control' type='text' ngModel name='admissionCommiteeMemberContact'
+                #tcontact='ngModel' required>
+        </div>
+        <div *ngIf='tcontact.touched && tcontact.invalid' class='alert alert-danger'>
+            Please enter contact
+        </div>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]='commiteeForm.invalid'>Submit</button>
+    </form>
+
+    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
