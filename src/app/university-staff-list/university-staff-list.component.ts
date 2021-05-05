@@ -16,7 +16,7 @@ export class UniversityStaffListComponent implements OnInit {
 
   header: string = "List of University Staff Members";
 
-  employees: UniversityStaffs[];
+  staffs: UniversityStaffs[];
   message: string = null;
   errorMessage: string = null;
 
@@ -35,7 +35,7 @@ export class UniversityStaffListComponent implements OnInit {
 
     this.service.getStaffs().subscribe(
       (data) => {
-        this.employees = data;
+        this.staffs = data;
         this.errorMessage = null;
       },
       (failResponse) => {

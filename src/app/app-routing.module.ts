@@ -21,7 +21,7 @@ const routes: Routes = [
 
   {path:'staff-create',component:UniversityStaffCreateComponent},
   {path:'staff-list',component:UniversityStaffListComponent},
-  {path:'staff-update',component:UniversityStaffUpdateComponent},
+  {path:'staff-update/:staffId',component:UniversityStaffUpdateComponent},
   {path:'login', component:LoginComponent},
   {path:'logout',component:LogoutComponent}
 ];  
