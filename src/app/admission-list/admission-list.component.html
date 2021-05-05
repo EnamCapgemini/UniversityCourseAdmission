@@ -20,4 +20,11 @@
             </td>
         </tr>
     </table>
+
+    <div *ngIf='message != null' (click)='message=null' class='alert alert-success text-center'>
+        {{message}}
+    </div>
+</div>
+<div class='alert alert-danger text-center' *ngIf='errorMessage != null'>
+    <h2>{{errorMessage}}</h2>
 </div>
