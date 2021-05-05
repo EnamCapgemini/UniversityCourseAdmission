@@ -7,7 +7,6 @@ describe('CourseServerService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CourseServerService);
   });
 
   it('should be created', () => {
