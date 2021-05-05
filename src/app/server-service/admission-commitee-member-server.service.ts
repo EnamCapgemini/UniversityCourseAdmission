@@ -20,11 +20,20 @@ export class AdmissionCommiteeMemberServerService {
   updateAdmissionCommiteeMember(admissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.put(this.baseUrl, admissionCommiteeMember, { responseType: 'text' });
   }
+<<<<<<< Updated upstream
   deleteAdmissionCommiteeMember(admissionCommiteeMemberId: number): Observable<any> {
     //include responseType in options because response by default is JSON
     return this.http.delete(`${this.baseUrl}/deleteUserByAdmissionCommiteeMemberId/${admissionCommiteeMemberId}`, { responseType: 'text' })  // this.baseUrl+"/"+admissionCommiteeMemberId
   }
   addAdmissionCommiteeMember(newAdmissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.post(this.baseUrl, newAdmissionCommiteeMember, { responseType: 'text' });
+=======
+  /*deleteApplicant(admissionCommiteeMemberId: number): Observable<any> {
+    //include responseType in options because response by default is JSON
+    return this.http.delete(`${this.baseUrl}/${admissionCommiteeMemberId}`, { responseType: 'text' })  // this.baseUrl+"/"+admissionCommiteeMemberId
+  }*/
+  addApplicant(newApp: AdmissionCommiteeMember): Observable<any> {
+    return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
+>>>>>>> Stashed changes
   }
 }

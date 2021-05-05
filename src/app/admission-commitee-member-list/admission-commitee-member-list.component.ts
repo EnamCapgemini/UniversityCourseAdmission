@@ -12,7 +12,7 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
   constructor(private service: AdmissionCommiteeMemberServerService) { }
 
   ngOnInit(): void {
-    this.loadData();
+    //this.loadData();
   }
 
   header: string = "List of Admission Commitee Members";
@@ -21,8 +21,13 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
   message: string = null;
   errorMessage: string = null;
 
+<<<<<<< Updated upstream
   delete(admissionCommiteeMemberId: number): void {
     this.service.deleteAdmissionCommiteeMember(admissionCommiteeMemberId).subscribe(
+=======
+  /*delete(admissionCommiteeMemberId: number): void {
+    this.service.deleteAdmissionCommiteeMembe(admissionCommiteeMemberId).subscribe(
+>>>>>>> Stashed changes
       (response) => {
         this.message = response;
         this.loadData();
@@ -43,6 +48,6 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
         this.errorMessage = failResponse.error.errorMessage;
       }
     )
-  }
+  }*/
 
 }
