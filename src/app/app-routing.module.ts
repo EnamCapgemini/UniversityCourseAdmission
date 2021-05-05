@@ -47,7 +47,8 @@ const routes: Routes = [
 
   { path:'course-list',component:CourseListComponent},
   { path:'course-create',component:CourseCreateComponent},
-  { path:'course-update',component:CourseUpdateComponent},
+  { path:'course-update/:courseId',component:CourseUpdateComponent },
+
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'changePassword', component: ChangePasswordComponent },

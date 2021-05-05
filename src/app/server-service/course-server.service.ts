@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Course } from 'src/model/course';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class CourseServerService {
     getCourse(cid: number):Observable<any> {
       return this.http.get(`${this.baseUrl}/${cid}`)
     }
-    updateCourse(cid: number):Observable<any> {
-      return this.http.put(`${this.baseUrl}/${cid}`, { responseType: 'text' });
+    updateCourse(c: Course,cid:number):Observable<any> {
+      return this.http.put(`${this.baseUrl}/${cid}`,c, { responseType: 'text' });
     }
     deleteCourses(cid: number): Observable<any> {
       //include responseType in options because response by default is JSON

@@ -14,6 +14,7 @@ export class CourseUpdateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
+  courseId: number;
   constructor(private service: CourseServerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -35,7 +36,7 @@ export class CourseUpdateComponent implements OnInit {
   }
 
   updated() {
-    this.service.updateCourse(this.course.courseId).subscribe(
+    this.service.updateCourse(this.course,this.courseId).subscribe(
       (message) => {
         this.successMessage=message
         this.validationMessages = null

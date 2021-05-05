@@ -1,5 +1,5 @@
 <div class='course'>
-    <div *ngIf='employee != null'>
+    <div *ngIf='course != null'>
         <table class='table'>
             <tr>
                 <td>Course Id</td>
@@ -7,7 +7,7 @@
             </tr>
             <tr>
                 <td>Course Name</td>
-                <td><input type='text' [(ngModel)]='course.Name'></td>
+                <td><input type='text' [(ngModel)]='course.courseName'></td>
             </tr>
             <tr>
                 <td>Course Duration</td>

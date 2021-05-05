@@ -20,7 +20,7 @@
             <td>{{course.courseFees}}</td>
             <td>
                 <button class='btn btn-danger' (click)='delete(course.courseId)'>Delete</button>
-                <a [routerLink]="['/update',course.courseId]" class='btn btn-primary'>Modify</a>
+                <a [routerLink]="['/course-update',course.courseId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
     </table>
