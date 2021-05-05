@@ -22,12 +22,14 @@ export class LoginComponent implements OnInit {
   signIn(credentials) {
     this.authenticationService.login(credentials)
       .subscribe(result => {
-        this.router.navigate(['/']);
+        //console.log(result);
+        this.router.navigate(['/profile']);
         
       },
          fail => {
+          console.log(fail);
           this.invalidLogin = true;
-          this.message = fail.error.errorMessage;
+          this.message = fail.error.details;
         }
       );
 
