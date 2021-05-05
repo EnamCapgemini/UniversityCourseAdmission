@@ -8,7 +8,7 @@ import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
 })
 export class AdmissionCommiteeMemberServerService {
 
-  baseUrl: string = "http://localhost:8082/admissionCommiteeMembers"
+  baseUrl: string = "http://localhost:8082/AdmissionCommiteeMember"
 
   constructor(private http: HttpClient) { }
   getAdmissionComiteeMembers(): Observable<any> {
@@ -17,14 +17,14 @@ export class AdmissionCommiteeMemberServerService {
   getAdmissionCommiteeMember(admissionCommiteeMemberId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${admissionCommiteeMemberId}`)
   }
-  updateApplicant(admissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
+  updateAdmissionCommiteeMember(admissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
     return this.http.put(this.baseUrl, admissionCommiteeMember, { responseType: 'text' });
   }
-  deleteApplicant(admissionCommiteeMemberId: number): Observable<any> {
+  deleteAdmissionCommiteeMember(admissionCommiteeMemberId: number): Observable<any> {
     //include responseType in options because response by default is JSON
     return this.http.delete(`${this.baseUrl}/${admissionCommiteeMemberId}`, { responseType: 'text' })  // this.baseUrl+"/"+admissionCommiteeMemberId
   }
-  addApplicant(newApp: AdmissionCommiteeMember): Observable<any> {
-    return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
+  addAdmissionCommiteeMember(newAdmissionCommiteeMember: AdmissionCommiteeMember): Observable<any> {
+    return this.http.post(this.baseUrl, newAdmissionCommiteeMember, { responseType: 'text' });
   }
 }

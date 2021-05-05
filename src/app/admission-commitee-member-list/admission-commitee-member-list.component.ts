@@ -14,12 +14,15 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
   ngOnInit(): void {
     this.loadData();
   }
+
+  header: string = "List of Admission Commitee Members";
+
   admissionCommiteeMembers: AdmissionCommiteeMember[];
   message: string = null;
   errorMessage: string = null;
 
   delete(admissionCommiteeMemberId: number): void {
-    this.service.deleteApplicant(admissionCommiteeMemberId).subscribe(
+    this.service.deleteAdmissionCommiteeMember(admissionCommiteeMemberId).subscribe(
       (response) => {
         this.message = response;
         this.loadData();
