@@ -1,4 +1,4 @@
-export interface Applicant{
+export interface Applicant {
     applicantId:number;
     username:string;
     password:string;
@@ -11,5 +11,5 @@ export interface Applicant{
     courseId:number;
     address:string;
     emailId:string;
-    gender:string;
+    gender:string; 
 }

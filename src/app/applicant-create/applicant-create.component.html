@@ -1,1 +1,86 @@
-<p>applicant-create works!</p>
+<div class='applicant'>
+
+    <h3 style="text-align:center"> Create New Applicant</h3>
+    <hr>
+    <form #applicantForm='ngForm' (submit)='createNew(applicantForm.value)'>
+        <div class='form-group'>
+            <label for='applicantId'>Applicant Id</label>
+            <input id='applicantId' class='form-control' type='text' ngModel name='applicantId' #tapplicantId='ngModel' required>
+        </div>
+        <div *ngIf='tapplicantId.touched && tapplicantId.invalid' class='alert alert-danger'>
+            Please enter Applicant id. This field is must.
+        </div>
+        <div class='form-group'>
+            <label for='username'>Username</label>
+            <input id='username' class='form-control' type='text' ngModel name='username' #tusername='ngModel' required>
+        </div>
+        <div *ngIf='tusername.touched && tusername.invalid'>
+            <div *ngIf='tusername.errors.required' class='alert alert-danger'>
+                Please enter username
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' />
+        </div>
+        <div *ngIf='tpassword.touched && tpassword.invalid'>
+            <div *ngIf='tpassword.errors.required' class='alert alert-danger'>
+                Please enter password
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="role" id='role' class='form-control' ngModel name='role' #trole='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="applicantFirstName">Applicant First Name</label>
+            <input type="applicantFirstName" id='applicantFirstName' class='form-control' ngModel name='applicantFirstName' #tapplicantFirstName='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="applicantLastName">Applicant Last Name</label>
+            <input type="applicantLastName" id='applicantLastName' class='form-control' ngModel name='applicantLastName' #tapplicantLastName='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="mobileNumber" id='mobileNumber' class='form-control' ngModel name='mobileNumber' #tmobileNumber='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="applicantDegree">Applicant Degree</label>
+            <input type="applicantDegree" id='applicantDegree' class='form-control' ngModel name='applicantDegree' #tapplicantDegree='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="applicantGraduationPercent">Applicant Graduation Percent</label>
+            <input type="applicantGraduationPercent" id='applicantGraduationPercent' class='form-control' ngModel name='applicantGraduationPercent' #tapplicantGraduationPercent='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="courseId">Course Id</label>
+            <input type="courseId" id='courseId' class='form-control' ngModel name='courseId' #tcourseId='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="address" id='role' class='form-control' ngModel name='address' #taddress='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="emailId">Email Id</label>
+            <input type="emailId" id='emailId' class='form-control' ngModel name='emailId' #temailId='ngModel' />
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="gender" id='gender' class='form-control' ngModel name='gender' #tgender='ngModel' />
+        </div>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]="applicantForm.invalid">Submit</button>
+    </form>
+    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        {{successMessage}}
+    </p>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+            {{msg}}
+        </p>
+    </div>
+</div>
