@@ -8,14 +8,14 @@
             <th>Status</th>
             <th>Action</th>
         </tr>
-        <tr *ngFor='let ad of admissions' style='padding:2px'>
-            <td>{{ad.admissionId}}</td>
-            <td>{{ad.courseId}}</td>
-            <td>{{ad.admissionDate}}</td>
-            <td>{{ad.status}}</td>
+        <tr *ngFor='let admission of admissions' style='padding:2px'>
+            <td>{{admission.admissionId}}</td>
+            <td>{{admission.courseId}}</td>
+            <td>{{admission.admissionDate}}</td>
+            <td>{{admission.status}}</td>
             <td>
-                <button class='btn btn-danger' (click)='delete(ad.admissionId)'>Delete</button>&nbsp;&nbsp;
-                <a [routerLink]="['/admission-update']" class='btn btn-primary'>Modify</a> <!-- ,ad.admissionId-->
+                <button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>   <!--&nbsp;&nbsp;-->
+                <a [routerLink]="['/admission-update',admission.admissionId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
     </table>

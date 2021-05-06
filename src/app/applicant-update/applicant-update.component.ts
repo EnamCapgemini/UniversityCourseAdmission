@@ -4,7 +4,7 @@ import { Applicant } from 'src/model/applicant';
 import { ApplicantServerService } from '../server-service/applicant-server.service';
 
 @Component({
-  selector: 'app-applicant-update',
+  selector: 'applicant-update',
   templateUrl: './applicant-update.component.html',
   styleUrls: ['./applicant-update.component.css']
 })

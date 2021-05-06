@@ -10,7 +10,7 @@
             <th>Mobile Number</th>
             <th>Applicant Degree</th>
             <th>Applicant Graduation Percent</th>
-            <th>Course Id</th>
+            <!--<th>Course Id</th>-->
             <th>Address</th>
             <th>Email Id</th>
             <th>Gender</th>
@@ -25,12 +25,12 @@
             <td>{{app.mobileNumber}}</td>
             <td>{{app.applicantDegree}}</td>
             <td>{{app.applicantGraduationPercent}}</td>
-            <td>{{app.courseId}}</td>
+            <!--<td>{{app.courseId}}</td>-->
             <td>{{app.address}}</td>
             <td>{{app.emailId}}</td>
             <td>{{app.gender}}</td>
             <td>
-                <!--<button class='btn btn-danger' (click)='delete(app.applicantId)'>Delete</button>-->
+                <button class='btn btn-danger' (click)='delete(app.applicantId)'>Delete</button>
                 <a [routerLink]="['/applicant-update',app.applicantId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>

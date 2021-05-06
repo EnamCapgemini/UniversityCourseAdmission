@@ -27,6 +27,7 @@ import { AdmissionListComponent } from './admission-list/admission-list.componen
 import { AdmissionCreateComponent } from './admission-create/admission-create.component';
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
+import { CourseDeleteComponent } from './course-delete/course-delete.component';
 
 const routes: Routes = [
 
@@ -51,8 +52,11 @@ const routes: Routes = [
 
 
   { path: 'course-list', component: CourseListComponent },
-  { path: 'course-create', component: CourseCreateComponent },
-  { path: 'course-update/:courseId', component: CourseUpdateComponent },
+  { path: 'course-create', component: CourseCreateComponent ,canActivate: [AuthguardService]},
+  
+  { path: 'course-update/:courseId', component: CourseUpdateComponent ,canActivate: [AuthguardService]},
+  { path: 'course-delete/:courseId', component: CourseDeleteComponent ,canActivate: [AuthguardService]},
+
 
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
@@ -61,7 +65,7 @@ const routes: Routes = [
 
   { path: 'admission-create', component: AdmissionCreateComponent },
   { path: 'admission-list', component: AdmissionListComponent },
-  { path: 'admission-update', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService]*/ },
+  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService]*/ },
 
 ];
 

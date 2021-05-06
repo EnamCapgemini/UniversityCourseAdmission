@@ -13,7 +13,7 @@
 
         <div class='form-group'>
             <label for='courseName'>Course Name</label>
-            <input id='courseName' class='form-control' type='text' ngModel name='courseName' #tcourseName='ngModel' required minlength="6">
+            <input id='courseName' class='form-control' type='text' ngModel name='courseName' #tcourseName='ngModel' required minlength="3">
         </div>
         <div *ngIf='tcourseName.touched && tcourseName.invalid'>
             <div *ngIf='tcourseName.errors.required' class='alert alert-danger'>

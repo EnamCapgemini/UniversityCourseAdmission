@@ -28,7 +28,8 @@ import { AdmissionListComponent } from './admission-list/admission-list.componen
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component'
+import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
+import { CourseDeleteComponent } from './course-delete/course-delete.component'
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-mem
     AdmissionUpdateComponent,
     ProfileComponent,
     ChangePasswordComponent,
-    AdmissionCommiteeMemberStatusComponent
+    AdmissionCommiteeMemberStatusComponent,
+    CourseDeleteComponent
   ],
   imports: [
     BrowserModule,

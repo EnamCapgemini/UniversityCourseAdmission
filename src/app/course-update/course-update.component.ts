@@ -36,7 +36,7 @@ export class CourseUpdateComponent implements OnInit {
   }
 
   updated() {
-    this.service.updateCourse(this.course,this.courseId).subscribe(
+    this.service.updateCourse(this.course).subscribe(
       (message) => {
         this.successMessage=message
         this.validationMessages = null

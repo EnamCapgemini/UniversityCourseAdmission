@@ -9,7 +9,7 @@
             <th>Course End Date</th>
 
             <th>Course Fees</th>
-
+            <th>ACTION</th>
         </tr>
         <tr *ngFor='let course of courses' style='padding:2px'>
             <td>{{course.courseId}}</td>
@@ -19,7 +19,7 @@
             <td>{{course.courseEndDate}}</td>
             <td>{{course.courseFees}}</td>
             <td>
-                <button class='btn btn-danger' (click)='delete(course.courseId)'>Delete</button>
+                <a [routerLink]="['/course-delete',course.courseId]" class='btn btn-danger'>Delete</a>
                 <a [routerLink]="['/course-update',course.courseId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>

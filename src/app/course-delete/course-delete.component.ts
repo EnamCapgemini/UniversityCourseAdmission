@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Admission } from 'src/model/admission';
-import { AdmissionServerService } from '../server-service/admission-server.service';
+import { Course } from 'src/model/course';
+import { CourseServerService } from '../server-service/course-server.service';
 
 @Component({
-  selector: 'app-admission-update',
-  templateUrl: './admission-update.component.html',
-  styleUrls: ['./admission-update.component.css']
+  selector: 'app-course-delete',
+  templateUrl: './course-delete.component.html',
+  styleUrls: ['./course-delete.component.css']
 })
-export class AdmissionUpdateComponent implements OnInit {
-
-  admission:Admission=null;
+export class CourseDeleteComponent implements OnInit {
+  course: Course=null;
 
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-  admissionId: number;
-
-  constructor(private service:AdmissionServerService, private route: ActivatedRoute, private router: Router) { }
+  courseId: number;
+  constructor(private service: CourseServerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+
     this.route.paramMap.subscribe(
       (params) => {
-        let aid: number = +params.get('admissionId');
+        let cid: number = +params.get('courseId');
 
-        this.service.getAdmission(aid).subscribe(
+        this.service.deleteCourses(cid).subscribe(
           (data) => {
-            this.admission = data
+            this.course = data
           },
           (fail) => {
             this.errorMessage = fail.error.errorMessage;
@@ -36,8 +35,8 @@ export class AdmissionUpdateComponent implements OnInit {
     )
   }
 
-  updated() {
-    this.service.updateAdmission(this.admission).subscribe(
+  delete() {
+    this.service.deleteCourses(this.courseId).subscribe(
       (message) => {
         this.successMessage=message
         this.validationMessages = null
@@ -48,14 +47,13 @@ export class AdmissionUpdateComponent implements OnInit {
         this.validationMessages = JSON.parse(failure.error).errors;
         this.errorMessage = JSON.parse(failure.error).errorMessage;
       }
-
+  
     )
 
   }
 
+
   goBack(){
-    this.router.navigate(["admission-list"]);
+    this.router.navigate(["course-list"]);
   }
-
-
 }

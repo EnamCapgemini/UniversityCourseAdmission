@@ -22,9 +22,9 @@ export class AdmissionServerService {
   }
   deleteAdmission(admissionId: number): Observable<any> {
     //include responseType in options because response by default is JSON
-    return this.http.delete(`${this.baseUrl}/${admissionId}`, { responseType: 'text' })  // this.baseUrl+"/"+applicantId
-  }
-  addAdmission(newApp: Admission): Observable<any> {
-    return this.http.post(this.baseUrl, newApp, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/${admissionId}`, { responseType: 'text' })  
+    }
+  addAdmission(newAdmission: Admission): Observable<any> {
+    return this.http.post(this.baseUrl, newAdmission, { responseType: 'text' });
   }
 }

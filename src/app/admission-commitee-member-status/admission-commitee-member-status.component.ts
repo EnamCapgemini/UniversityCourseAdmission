@@ -15,7 +15,6 @@ export class AdmissionCommiteeMemberStatusComponent implements OnInit {
 
   admissionCommiteeMember: AdmissionCommiteeMember = null;
   admission: Admission = null;
-  status: Status = null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
