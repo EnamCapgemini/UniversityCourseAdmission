@@ -22,7 +22,7 @@ export class UniversityStaffCreateComponent implements OnInit {
   ];
 
   createNew(data: UniversityStaffs) {
-    /*this.service.addStaff(data).subscribe(
+    this.service.addStaff(data).subscribe(
       (message) => {
         this.successMessage = message;
         this.validationMessages = null;
@@ -34,8 +34,8 @@ export class UniversityStaffCreateComponent implements OnInit {
         this.errorMessage = JSON.parse(failure.error).errorMessage;
       }
 
-    )*/
-    console.log(data);
+    )
+    //console.log(data);
 
   }
 

@@ -10,8 +10,8 @@ import { UniversityStaffServerService } from '../server-service/university-staff
   styleUrls: ['./university-staff-update.component.css']
 })
 export class UniversityStaffUpdateComponent implements OnInit {
-  staff: UniversityStaffs={staffId:0,username:"",password:"",role:""};
-
+  //staff: UniversityStaffs={staffId:0,username:"",password:"",role:""};
+  staff: UniversityStaffs=null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
@@ -66,6 +66,7 @@ export class UniversityStaffUpdateComponent implements OnInit {
       }
 
     )
+    //console.log(this.staff)
     }
   }
 

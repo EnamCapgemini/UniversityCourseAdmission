@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 
@@ -27,6 +28,7 @@ export class UniversityStaffListComponent implements OnInit {
         this.loadData();
       },
       (error) => console.log(error)
+      
     );
 
   }

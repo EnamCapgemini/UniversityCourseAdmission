@@ -5,7 +5,7 @@
     <form #staffForm='ngForm' (submit)='createNew(staffForm.value)'>
         <div class='form-group'>
             <label for='staffid'>Staff Id</label>
-            <input type='text' id='staffid' class='form-control' ngModel name='empid' #tstaffId='ngModel' required>
+            <input type='text' id='staffid' class='form-control' ngModel name='staffId' #tstaffId='ngModel' required>
         </div>
         <div *ngIf='tstaffId.touched && tstaffId.invalid' class='alert alert-danger'>
             Please enter staff id. This field is must.
@@ -13,7 +13,7 @@
 
         <div class='form-group'>
             <label for='staffname'>Name</label>
-            <input type='text' id='staffname' class='form-control' ngModel name='staffname' #tstaffname='ngModel' required minlength="6">
+            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel' required minlength="6">
         </div>
         <div *ngIf='tstaffname.touched && tstaffname.invalid'>
             <div *ngIf='tstaffname.errors.required' class='alert alert-danger'>
@@ -40,7 +40,7 @@
 
         <div class='form-group'>
             <label for='role'>Role</label>
-            <select id='role' class="form-control" ngModel name='staffrole' #tstaffrole='ngModel' aria-label="Default selected Role" required>
+            <select id='role' class="form-control" ngModel name='role' #tstaffrole='ngModel' aria-label="Default selected Role" required>
                 <option disabled>Choose Your Role</option>
                 <option *ngFor='let role of roles' [value]="role.name">
                     {{role.name}}
