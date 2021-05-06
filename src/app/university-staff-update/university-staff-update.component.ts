@@ -10,15 +10,15 @@ import { UniversityStaffServerService } from '../server-service/university-staff
   styleUrls: ['./university-staff-update.component.css']
 })
 export class UniversityStaffUpdateComponent implements OnInit {
-  staff: UniversityStaffs=null;
+  staff: UniversityStaffs={staffId:0,username:"",password:"",role:""};
 
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
   
   roles: any[] = [
-    { id: 1, name: 'STAFF' },
-    { id: 2, name: 'COMMITTEE' }
+    {name: 'STAFF' },
+    {name: 'COMMITEE' }
   ];
 
  
@@ -29,7 +29,7 @@ export class UniversityStaffUpdateComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params) => {
         let staffid: number = +params.get('staffId');
-
+        
         this.service.getStaff(staffid).subscribe(
           (data) => {
             this.staff = data
@@ -43,8 +43,9 @@ export class UniversityStaffUpdateComponent implements OnInit {
   }
 
 
-  updatedRole(event:string){
-    if(event=="STAFF" || event=="COMMITTEE")
+  updatedRole(event){
+    let value=event.target.value;
+    if(value=="STAFF" || value=="COMMITEE")
       return true;
       else
       return false;

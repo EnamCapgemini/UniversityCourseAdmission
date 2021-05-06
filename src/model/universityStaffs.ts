@@ -2,6 +2,5 @@ export interface UniversityStaffs{
     staffId:number,
     username:string,
     password:string,
-    role:string,
-    courses:string[]
+    role:string
 }
