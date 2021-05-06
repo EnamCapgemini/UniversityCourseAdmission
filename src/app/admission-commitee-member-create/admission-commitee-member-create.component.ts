@@ -12,10 +12,13 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
+  flag: boolean;
+  constructor(private service: AdmissionCommiteeMemberServerService) {
 
-  constructor(private service: AdmissionCommiteeMemberServerService) { }
+  }
 
   ngOnInit() {
+
   }
 
   // roles: any[] = [
@@ -23,6 +26,13 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   //   { name: 'COMMITEE' }
   // ];
 
+  // existsData(): void{
+  //   if (!document.getElementById("acmid") && !document.getElementById("staffid")) {
+  //     this.flag = true;
+  //   } else {
+  //     this.flag = false;
+  //   }
+  // }
 
   createNew(data: AdmissionCommiteeMember) {
     this.service.addAdmissionCommiteeMember(data).subscribe(
