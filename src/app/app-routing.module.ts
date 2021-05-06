@@ -39,7 +39,7 @@ const routes: Routes = [
 
   { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },
   { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent },
-  { path: 'admission-commitee-member-status', component: AdmissionCommiteeMemberStatusComponent },
+  { path: 'admission-commitee-member-status/:admissionId', component: AdmissionCommiteeMemberStatusComponent },
   { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
 
 
@@ -52,10 +52,10 @@ const routes: Routes = [
 
 
   { path: 'course-list', component: CourseListComponent },
-  { path: 'course-create', component: CourseCreateComponent ,canActivate: [AuthguardService]},
-  
-  { path: 'course-update/:courseId', component: CourseUpdateComponent ,canActivate: [AuthguardService]},
-  { path: 'course-delete/:courseId', component: CourseDeleteComponent ,canActivate: [AuthguardService]},
+  { path: 'course-create', component: CourseCreateComponent, canActivate: [AuthguardService] },
+
+  { path: 'course-update/:courseId', component: CourseUpdateComponent, canActivate: [AuthguardService] },
+  { path: 'course-delete/:courseId', component: CourseDeleteComponent, canActivate: [AuthguardService] },
 
 
   { path: 'profile', component: ProfileComponent },

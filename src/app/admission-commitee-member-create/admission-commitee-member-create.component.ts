@@ -18,6 +18,12 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   ngOnInit() {
   }
 
+  // roles: any[] = [
+  //   { name: 'STAFF' },
+  //   { name: 'COMMITEE' }
+  // ];
+
+
   createNew(data: AdmissionCommiteeMember) {
     this.service.addAdmissionCommiteeMember(data).subscribe(
       (message) => {
