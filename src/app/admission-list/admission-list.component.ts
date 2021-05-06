@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Admission } from 'src/model/admission';
 import { AdmissionServerService } from '../server-service/admission-server.service';
 
@@ -9,7 +10,7 @@ import { AdmissionServerService } from '../server-service/admission-server.servi
 })
 export class AdmissionListComponent implements OnInit {
 
-  constructor(private service: AdmissionServerService) { }
+  constructor(private service: AdmissionServerService, private route: ActivatedRoute, private router: Router) { }
 
   header: string = "List of Admissions";
 
