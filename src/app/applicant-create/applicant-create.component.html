@@ -30,7 +30,12 @@
         </div>
         <div class="form-group">
             <label for="role">Role</label>
-            <input type="role" id='role' class='form-control' ngModel name='role' #trole='ngModel' />
+            <select id='role' class="form-control" ngModel name='role' #trole='ngModel' aria-label="Default selected Role" required>
+                <option disabled>Choose Your Role</option>
+                <option *ngFor='let role of roles' [value]="role.name">
+                    {{role.name}}
+                </option>
+            </select> 
         </div>
         <div class="form-group">
             <label for="applicantFirstName">Applicant First Name</label>
@@ -54,11 +59,16 @@
         </div>
         <div class="form-group">
             <label for="courseId">Course Id</label>
-            <input type="courseId" id='courseId' class='form-control' ngModel name='courseId' #tcourseId='ngModel' />
+            <select id='courseId' class="form-control" ngModel name='courseId' #tcourseId='ngModel' aria-label="Default selected Course Id" required>
+                <option disabled>Choose Your Course</option>
+                <option *ngFor='let course of courses' [value]="course.name">
+                    {{course.number}}
+                </option>
+            </select>
         </div>
         <div class="form-group">
             <label for="address">Address</label>
-            <input type="address" id='role' class='form-control' ngModel name='address' #taddress='ngModel' />
+            <input type="address" id='address' class='form-control' ngModel name='address' #taddress='ngModel' />
         </div>
         <div class="form-group">
             <label for="emailId">Email Id</label>
@@ -66,7 +76,12 @@
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
-            <input type="gender" id='gender' class='form-control' ngModel name='gender' #tgender='ngModel' />
+            <select id='gender' class="form-control" ngModel name='gender' #tgender='ngModel' aria-label="Default selected Gender" required>
+                <option disabled>Choose Your Gender</option>
+                <option *ngFor='let gender of genders' [value]="gender.name">
+                    {{gender.name}}
+                </option>
+            </select>
         </div>
         <button type='submit' class='btn btn-primary btn-block' [disabled]="applicantForm.invalid">Submit</button>
     </form>

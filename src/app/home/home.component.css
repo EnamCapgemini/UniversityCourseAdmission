@@ -29,15 +29,15 @@ h3{
     width:70%;height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: slide 20s infinite linear;
+    animation: change 20s infinite linear;
 }
-@keyframes slide{
+@keyframes change{
     0%{background-image: url(https://content3.jdmagicbox.com/comp/mumbai/k9/022pxx22.xx22.111115124001.w3k9/catalogue/university-sports-pavilion-marine-lines-mumbai-sports-ground-4d07uf4.jpg?clr=333333);}
     20%{background-image: url(https://indiachronicles.com/wp-content/uploads/2019/08/canteen-du-800x400.jpg);}
     40%{background-image: url(https://lh3.googleusercontent.com/proxy/PhplN05-xla9j2ecJz5qxau8dilwrY-8wteUIDeWhwM9cbRjR4_bGqETjlsXvrSVje6E_DtdYtzUrLuxZJ_rAUKySkxrUKc_czYE);}
     60%{background-image: url(https://www.lancaster.ac.uk/media/lancaster-university/content-assets/images/alumni/new-alumni-website/LUJMedical02.jpg);}
-    80%{background-image: url(https://www.studentproblems.com/wp-content/uploads/2020/03/lecture.jpg);}
-    100%{background-image: url(https://www.qub.ac.uk/home/media/Media,1003429,smxx.jpg);}
+    80%{background-image: url(https://www.qub.ac.uk/home/media/Media,1003429,smxx.jpg);}
+    100%{background-image: url(https://www.studentproblems.com/wp-content/uploads/2020/03/lecture.jpg);}
 }
 .contact{
     width: 30%;height:500px;
@@ -46,4 +46,8 @@ h3{
 }
 img{
     margin-left: 5px;
+}
+.map{
+    background-size: cover;
+    display:flex; flex-direction: column;
 }

@@ -8,8 +8,8 @@ export interface Applicant {
     mobileNumber:string;
     applicantDegree:string;
     applicantGraduationPercent:number;
-    courseId:number;
     address:string;
     emailId:string;
     gender:string; 
+    courseId:number;
 }
