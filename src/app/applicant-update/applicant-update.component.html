@@ -1,4 +1,4 @@
-<div class="app">
+<div class="applicant">
     <div *ngIf='applicant!=null'>
         <table class="table">
             <tr>
@@ -10,8 +10,8 @@
                 <td><input type='text' [(ngModel)]='applicant.username'></td>
             </tr>
             <tr>
-                <td>Role </td>
-                <td><input type='text' [(ngModel)]='applicant.role'></td>
+                <td>Password </td>
+                <td><input type='text' [(ngModel)]='applicant.password'></td>
             </tr>
             <tr>
                 <td>Applicant First Name </td>
@@ -33,10 +33,10 @@
                 <td>Applicant Graduation Percent</td>
                 <td><input type='text' [(ngModel)]='applicant.applicantGraduationPercent'></td>
             </tr>
-            <!--<tr>
+            <tr>
                 <td>Course Id</td>
                 <td><input type='text' [(ngModel)]='applicant.courseId'></td>
-            </tr>-->
+            </tr>
             <tr>
                 <td>Address</td>
                 <td><input type='text' [(ngModel)]='applicant.address'></td>

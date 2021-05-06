@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'applicant-create', component: ApplicantCreateComponent },
   { path: 'applicant-list', component: ApplicantListComponent },
-  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent,/*canActivate:[AuthguardService]*/ },
+  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent/*canActivate:[AuthguardService]*/ },
 
 
 
