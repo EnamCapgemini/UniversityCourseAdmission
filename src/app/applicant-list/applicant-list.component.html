@@ -30,7 +30,7 @@
             <td>{{app.emailId}}</td>
             <td>{{app.gender}}</td>
             <td>
-                <!--<button class='btn btn-danger' (click)='delete(app.applicantId)'>Delete</button>-->
+                <button class='btn btn-danger' (click)='delete(app.applicantId)'>Delete</button>
                 <a [routerLink]="['/applicant-update',app.applicantId]" class='btn btn-primary'>Modify</a>
             </td>
         </tr>
