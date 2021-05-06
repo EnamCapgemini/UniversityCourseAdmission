@@ -31,9 +31,9 @@ import { CourseDeleteComponent } from './course-delete/course-delete.component';
 
 const routes: Routes = [
 
-  { path: 'staff-create', component: UniversityStaffCreateComponent },
-  { path: 'staff-list', component: UniversityStaffListComponent },
-  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, },
+  { path: 'staff-create', component: UniversityStaffCreateComponent, canActivate: [AuthguardService] },
+  { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService]},
+  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService]},
 
   //{ path: 'staff-update', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
