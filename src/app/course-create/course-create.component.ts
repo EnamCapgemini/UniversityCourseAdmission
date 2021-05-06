@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/model/course';
 import { CourseServerService } from '../server-service/course-server.service';
 
@@ -11,7 +12,7 @@ export class CourseCreateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-  constructor(private service:CourseServerService) { }
+  constructor(private service:CourseServerService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -31,5 +32,9 @@ export class CourseCreateComponent implements OnInit {
     )
 
   }
+  
 
+  goBack(){
+    this.router.navigate(["course-create"]);
+  }
 }
