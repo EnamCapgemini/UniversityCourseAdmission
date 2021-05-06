@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -8,15 +9,17 @@ import { map } from 'rxjs/operators';
 })
 export class AuthenticationService {
 
+  baseUrl: String = 'http://localhost:8082/';
+
   constructor(private http: HttpClient) {
   }
 
   login(credentials) {
-    return this.http.post<any>('http://localhost:8082/login', credentials).pipe(
+    let url = this.baseUrl + 'login';
+    return this.http.post<any>(url, credentials).pipe(
       map(
         response => {
           if (response && response.token) {
-            console.log(response.token);
             let tokenStr = 'Bearer ' + response.token;
             localStorage.setItem('token', tokenStr);
             return response;
@@ -39,5 +42,19 @@ export class AuthenticationService {
       return false;
 
     return tokenNotExpired(null,token);
+  }
+
+  getUserDetails(): Observable<any> {
+    let token = localStorage.getItem('token');
+    let url = this.baseUrl + 'getUserDetails';
+    let headers = new HttpHeaders({ 'Authorization' : token });
+    return this.http.get(url, {headers});
+  }
+
+  getSensitive(): Observable<any> {
+    let token = localStorage.getItem('token');
+    let url = this.baseUrl + 'getSensitive';
+    let headers = new HttpHeaders({ 'Authorization' : token});
+    return this.http.get(url, {headers, responseType:'text'});
   }
 }

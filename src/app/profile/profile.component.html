@@ -1,1 +1,27 @@
-<p>profile works!</p>
+<div class='user'>
+    <div *ngIf='userdetails != null'>
+        <h3 style='text-align:center;'>User Details</h3>
+        <table class='table'>
+            <tr>
+                <td>UserName: </td>
+                <td>{{userdetails.username}}</td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td>{{userdetails.password}}</td>
+            </tr>
+            <tr>
+                <td>Role: </td>
+                <td>{{userdetails.role}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+        {{errorMessage}}
+    </div>
+
+    <div *ngIf='info != null' class='alert alert-danger' (click)='info=null'>
+        {{info}}
+    </div>
+</div>

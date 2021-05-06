@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService) { }
 
     ngOnInit() {
+      if(this.authenticationService.isLoggedIn()) {
+        this.router.navigate(['/profile']);
+      }
     }
 
   signIn(credentials) {
@@ -27,7 +30,6 @@ export class LoginComponent implements OnInit {
         
       },
          fail => {
-          console.log(fail);
           this.invalidLogin = true;
           this.message = fail.error.details;
         }
