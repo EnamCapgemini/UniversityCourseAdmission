@@ -60,6 +60,8 @@
 
 
         <button type='submit' class='btn btn-primary btn-block' [disabled]="courseForm.invalid">Submit</button>
+        <button type='reset' class='btn btn-primary btn-block'>Reset From</button>
+        <button type='button' (onclick)='goBack()' class='btn btn-primary btn-block'>Click me to go to course list page!</button>
     </form>
 
     <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
