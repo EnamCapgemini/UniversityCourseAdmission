@@ -51,8 +51,9 @@ const routes: Routes = [
 
 
   { path: 'course-list', component: CourseListComponent },
-  { path: 'course-create', component: CourseCreateComponent },
-  { path: 'course-update/:courseId', component: CourseUpdateComponent },
+  { path: 'course-create', component: CourseCreateComponent ,canActivate: [AuthguardService]},
+  { path: 'course-update/:courseId', component: CourseUpdateComponent ,canActivate: [AuthguardService]},
+  
 
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
