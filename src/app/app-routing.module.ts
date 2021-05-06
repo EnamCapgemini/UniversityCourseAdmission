@@ -62,7 +62,7 @@ const routes: Routes = [
 
   { path: 'admission-create', component: AdmissionCreateComponent },
   { path: 'admission-list', component: AdmissionListComponent },
-  { path: 'admission-update', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService]*/ },
+  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService]*/ },
 
 ];
 
