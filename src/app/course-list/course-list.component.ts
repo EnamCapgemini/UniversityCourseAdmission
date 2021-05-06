@@ -20,16 +20,7 @@ export class CourseListComponent implements OnInit {
   message: string = null;
   errorMessage: string = null;
 
-  delete(courseId: number): void {
-    this.service.deleteCourses(courseId).subscribe(
-      (response) => {
-        this.message = response;
-        this.loadData();
-      },
-      (error) => console.log(error)
-    );
-
-  }
+  
 
   loadData(): void {
 
