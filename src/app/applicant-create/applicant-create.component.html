@@ -39,23 +39,28 @@
         </div>
         <div class="form-group">
             <label for="applicantFirstName">Applicant First Name</label>
-            <input type="applicantFirstName" id='applicantFirstName' class='form-control' ngModel name='applicantFirstName' #tapplicantFirstName='ngModel' />
+            <input type="text" id='applicantFirstName' class='form-control' ngModel name='applicantFirstName' #tapplicantFirstName='ngModel' />
         </div>
         <div class="form-group">
             <label for="applicantLastName">Applicant Last Name</label>
-            <input type="applicantLastName" id='applicantLastName' class='form-control' ngModel name='applicantLastName' #tapplicantLastName='ngModel' />
+            <input type="text" id='applicantLastName' class='form-control' ngModel name='applicantLastName' #tapplicantLastName='ngModel' />
         </div>
         <div class="form-group">
             <label for="mobileNumber">Mobile Number</label>
-            <input type="mobileNumber" id='mobileNumber' class='form-control' ngModel name='mobileNumber' #tmobileNumber='ngModel' />
+            <input type="tel" id='mobileNumber' class='form-control' ngModel name='mobileNumber' #tmobileNumber='ngModel' pattern="[0-9]{10}" required />
+        </div>
+        <div *ngIf='tmobileNumber.touched && tmobileNumber.invalid'>
+            <div *ngIf='tmobileNumber.errors.required || tmobileNumber.errors.pattern' class='alert alert-danger'>
+                Please enter 10-digit mobile number.
+            </div>
         </div>
         <div class="form-group">
             <label for="applicantDegree">Applicant Degree</label>
-            <input type="applicantDegree" id='applicantDegree' class='form-control' ngModel name='applicantDegree' #tapplicantDegree='ngModel' />
+            <input type="text" id='applicantDegree' class='form-control' ngModel name='applicantDegree' #tapplicantDegree='ngModel' />
         </div>
         <div class="form-group">
             <label for="applicantGraduationPercent">Applicant Graduation Percent</label>
-            <input type="applicantGraduationPercent" id='applicantGraduationPercent' class='form-control' ngModel name='applicantGraduationPercent' #tapplicantGraduationPercent='ngModel' />
+            <input type="number" id='applicantGraduationPercent' class='form-control' ngModel name='applicantGraduationPercent' #tapplicantGraduationPercent='ngModel' />
         </div>
         <div class="form-group">
             <label for="courseId">Course Id</label>
@@ -68,7 +73,7 @@
         </div>
         <div class="form-group">
             <label for="address">Address</label>
-            <input type="address" id='address' class='form-control' ngModel name='address' #taddress='ngModel' />
+            <input type="text" id='address' class='form-control' ngModel name='address' #taddress='ngModel' />
         </div>
         <div class="form-group">
             <label for="emailId">Email Id</label>

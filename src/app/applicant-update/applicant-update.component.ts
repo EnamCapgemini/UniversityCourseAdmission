@@ -15,7 +15,10 @@ export class ApplicantUpdateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-
+  genders: any[] = [
+    { name: 'MALE' },
+    { name: 'FEMALE' }
+  ];
   constructor(private service:ApplicantServerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
