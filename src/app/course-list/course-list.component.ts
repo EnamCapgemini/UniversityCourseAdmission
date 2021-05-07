@@ -64,4 +64,11 @@ courseName:any;
     this.key=key;
     this.reverse=!this.reverse;
   }
+  setMyStyle() {
+    let styles = {
+      'background':'linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
+}
 }
