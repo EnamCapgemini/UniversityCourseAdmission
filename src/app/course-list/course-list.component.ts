@@ -65,8 +65,8 @@ courseName:any;
     this.reverse=!this.reverse;
   }
   setMyStyle() {
-    let styles = {
-      'background':'linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)',
+    let styles = { 
+      'background':'linear-gradient(to right, #36d1dc, #5b86e5)',
       'background-repeat':'no-repeat'
     };
     return styles;
