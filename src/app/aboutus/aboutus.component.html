@@ -1,1 +1,39 @@
-<p>aboutus</p>
+<html>
+<body>
+<div class="about-section">
+    <h1>About Us Page</h1>
+    <p>Some text about who we are and what we do.</p>
+    <p>Resize the browser window to see that this page is responsive by the way.</p>
+  </div>
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column" *ngFor='let ele of aboutUs.slice(0,3)'>
+      <div class="card">
+       
+        <div class="container">
+          <h2>{{ele.name}}</h2>
+          <p class="title">{{ele.role}}</p>
+          <p>{{ele.description}}</p>
+          <p>{{ele.mailId}}</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column" *ngFor='let ele of aboutUs.slice(3,7)'>
+      <div class="card">
+        
+        <div class="container">
+          <h2>{{ele.name}}</h2>
+          <p class="title">{{ele.role}}</p>
+          <p>{{ele.description}}</p>
+          <p>{{ele.mailId}}</p>
+          <p><button class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+ 
