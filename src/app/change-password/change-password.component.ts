@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     if(!this.authenticationService.isLoggedIn()) {
-      this.message = "You have not loogged in";
+      this.message = "You have not logged in yet!!";
     }
   }
 

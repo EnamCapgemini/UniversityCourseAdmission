@@ -2,22 +2,22 @@
     <div *ngIf='admission!=null'>
         <table class='table'>
             <tr>
-                <td>Admission Id</td>
+                <th>Admission Id</th>
                 <td><input type='text' [(ngModel)]='admission.admissionId' readonly></td>
             </tr>
             <tr>
-                <td>Course Id </td>
+                <th>Course Id </th>
                 <td><input type='text' [(ngModel)]='admission.courseId' readonly></td>
             </tr>
             <tr>
-                <td>Admission Date </td>
+                <th>Admission Date </th>
                 <td><input type='date' [(ngModel)]='admission.admissionDate'></td>
             </tr>
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
         <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
 
-        <p class='alert alert-success text center' *ngIf='successMessage != null' (click)='successMessage=null'>
+        <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
             {{successMessage}}
         </p>
     </div>

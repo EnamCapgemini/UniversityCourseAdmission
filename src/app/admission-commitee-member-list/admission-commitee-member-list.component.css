@@ -7,3 +7,7 @@
     height: auto;
     float: left;
 }
+th{
+    text-align: center;
+    font-family: 'Times New Roman';
+}

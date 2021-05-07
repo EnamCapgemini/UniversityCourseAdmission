@@ -20,7 +20,7 @@ export class LogoutComponent implements OnInit {
       authService.logout().subscribe(
         (result) => {
           localStorage.removeItem('token');
-          this.message="You have been successfully logged out";
+          this.message="You have successfully logged out !";
         },
         (error) => {
           console.log(error);
@@ -28,7 +28,7 @@ export class LogoutComponent implements OnInit {
       );
     }
     else {
-      this.errorMessage="You have not loogged in";
+      this.errorMessage="You have not logged in! Please Log in to continue..";
     }
     
    }

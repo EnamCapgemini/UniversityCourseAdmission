@@ -1,6 +1,6 @@
 <div class='admission'>
 
-    <h3 style="text-align:center"> Create New Admission</h3>
+    <h3 style="text-align:center;color: mediumblue;"> Create New Admission</h3>
     <hr>
     <form #admissionForm='ngForm' (submit)='createNew(admissionForm.value)'>
         <div class='form-group'>
@@ -39,7 +39,7 @@
           <button type='submit' class='btn btn-primary btn-block' [disabled]="admissionForm.invalid">Submit</button>
     </form>
 
-    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+    <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
         {{successMessage}}
     </p>
 

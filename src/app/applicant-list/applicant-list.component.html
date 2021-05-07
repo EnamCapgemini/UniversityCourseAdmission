@@ -1,5 +1,5 @@
 <div class='maindiv' *ngIf='errorMessage == null'>
-    <h3 style='text-align:center;'>{{header}}</h3>
+    <h3 style='text-align:center;color: mediumblue;'>{{header}}</h3>
     <nav class="navbar navbar-dark bg-primary">
        
         <input class="form-control mr-sm-2 topnav-right fa fa-search" type="text" name="applicantDegree" [(ngModel)]="applicantDegree" (ngModelChange)="Search()" placeholder="Enter Applicant Degree to Search">
@@ -41,7 +41,7 @@
         </tr>
         <tr><pagination-controls (pageChange) = "p=$event"></pagination-controls></tr>
     </table>
-    <div *ngIf='message != null' (click)='message=null' class='alert alert-success'>
+    <div *ngIf='message != null' (click)='message=null' class='alert alert-success text-center'>
         {{message}}
     </div>
 </div>

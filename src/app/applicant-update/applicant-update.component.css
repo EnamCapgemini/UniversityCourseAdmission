@@ -6,3 +6,7 @@
     width:auto;
     float:left;
 }
+th{
+    font-family: 'Times New Roman';
+    text-transform: uppercase;
+}

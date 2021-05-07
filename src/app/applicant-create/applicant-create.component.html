@@ -1,6 +1,6 @@
 <div class='applicant'>
 
-    <h3 style="text-align:center"> Create New Applicant</h3>
+    <h3 style="text-align:center;color: mediumblue;"> Create New Applicant</h3>
     <hr>
     <form #applicantForm='ngForm' (submit)='createNew(applicantForm.value)'>
         <div class='form-group'>
@@ -38,11 +38,11 @@
             </select> 
         </div>
         <div class="form-group">
-            <label for="applicantFirstName">Applicant First Name</label>
+            <label for="applicantFirstName">First Name</label>
             <input type="text" id='applicantFirstName' class='form-control' ngModel name='applicantFirstName' #tapplicantFirstName='ngModel' />
         </div>
         <div class="form-group">
-            <label for="applicantLastName">Applicant Last Name</label>
+            <label for="applicantLastName">Last Name</label>
             <input type="text" id='applicantLastName' class='form-control' ngModel name='applicantLastName' #tapplicantLastName='ngModel' />
         </div>
         <div class="form-group">
@@ -55,11 +55,11 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="applicantDegree">Applicant Degree</label>
+            <label for="applicantDegree">Degree</label>
             <input type="text" id='applicantDegree' class='form-control' ngModel name='applicantDegree' #tapplicantDegree='ngModel' />
         </div>
         <div class="form-group">
-            <label for="applicantGraduationPercent">Applicant Graduation Percent</label>
+            <label for="applicantGraduationPercent">Graduation Percent</label>
             <input type="number" id='applicantGraduationPercent' class='form-control' ngModel name='applicantGraduationPercent' #tapplicantGraduationPercent='ngModel' />
         </div>
         <div class="form-group">
@@ -91,7 +91,7 @@
         <button type='submit' class='btn btn-primary btn-block' [disabled]="applicantForm.invalid">Submit</button>
         <button type='reset' class='btn btn-primary btn-block'>Reset Form</button>
     </form>
-    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+    <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
         {{successMessage}}
     </p>
 

@@ -1,6 +1,6 @@
 <div class='course'>
 
-    <h3 style="text-align:center"> Create New Course</h3>
+    <h3 style="text-align:center;color: mediumblue;"> Create New Course</h3>
     <hr>
     <form #courseForm='ngForm' (submit)='createNew(courseForm.value)'>
         <div class='form-group'>
@@ -63,16 +63,16 @@
         <button type='reset' class='btn btn-primary btn-block'>Reset From</button>
     </form>
 
-    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+    <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
         {{successMessage}}
     </p>
 
-    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+    <div *ngIf='errorMessage != null' class='alert alert-danger text-center' (click)='errorMessage=null'>
         {{errorMessage}}
     </div>
 
     <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
-        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger text-center'>
             {{msg}}
         </p>
     </div>

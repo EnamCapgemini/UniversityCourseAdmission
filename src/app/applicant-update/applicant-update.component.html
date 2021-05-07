@@ -2,62 +2,62 @@
     <div *ngIf='applicant!=null'>
         <table class="table">
             <tr>
-                <td>Applicant Id</td>
+                <th>Applicant Id</th>
                 <td><input type='text' [(ngModel)]='applicant.applicantId' readonly></td>
             </tr>
             <tr>
-                <td>Username </td>
+                <th>Username </th>
                 <td><input type='text' [(ngModel)]='applicant.username'></td>
             </tr>
             <tr>
-                <td>Password </td>
+                <th>Password </th>
                 <td><input type='text' [(ngModel)]='applicant.password'></td>
             </tr>
             <tr>
-                <td>Role </td>
+                <th>Role </th>
                 <td><input type='text' [(ngModel)]='applicant.role'></td>
             </tr>
             <tr>
-                <td>Applicant First Name </td>
+                <th>Applicant First Name </th>
                 <td><input type='text' [(ngModel)]='applicant.applicantFirstName'></td>
             </tr>
             <tr>
-                <td>Applicant Last Name </td>
+                <th>Applicant Last Name </th>
                 <td><input type='text' [(ngModel)]='applicant.applicantLastName'></td>
             </tr>
             <tr>
-                <td>Mobile Number </td>
+                <th>Mobile Number </th>
                 <td><input type='text' [(ngModel)]='applicant.mobileNumber'></td>
             </tr>
             <tr>
-                <td>Applicant Degree</td>
+                <th>Applicant Degree</th>
                 <td><input type='text' [(ngModel)]='applicant.applicantDegree'></td>
             </tr>
             <tr>
-                <td>Applicant Graduation Percent</td>
+                <th>Applicant Graduation Percent</th>
                 <td><input type='text' [(ngModel)]='applicant.applicantGraduationPercent'></td>
             </tr>
             <tr>
-                <td>Address</td>
+                <th>Address</th>
                 <td><input type='text' [(ngModel)]='applicant.address'></td>
             </tr>
             <tr>
-                <td>Email Id</td>
+                <th>Email Id</th>
                 <td><input type='text' [(ngModel)]='applicant.emailId'></td>
             </tr>
             <tr>
-                <td>Gender </td>
+                <th>Gender </th>
                 <td><input type='text' [(ngModel)]='applicant.gender'></td>
             </tr>
             <tr>
-                <td>Course Id </td>
+                <th>Course Id </th>
                 <td><input type='text' [(ngModel)]='applicant.courseId'></td>
             </tr>
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
         <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>
 
-        <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+        <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
             {{successMessage}}
         </p>
     </div>

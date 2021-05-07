@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
       this.authenticationService.getUserDetails().subscribe(
         (result) => {
           this.userdetails = result;
-          this.successMessage="successfully logged in";
+          this.successMessage="You have successfully logged in.";
         },
         (fail) => {
           this.errorMessage = fail.error.errorMessage;
@@ -33,8 +33,14 @@ export class ProfileComponent implements OnInit {
       );
     }
     else {
-      this.errorMessage = "You have not loogged in";
+      this.errorMessage = "You have not logged in! Please Log in.";
     }
   }
-
+  setMyStyle() {
+    let styles = {
+      'background':'linear-gradient(#dbe6f6, #c5796d)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
+  }
 }

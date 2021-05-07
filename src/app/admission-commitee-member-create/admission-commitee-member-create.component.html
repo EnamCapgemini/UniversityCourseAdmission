@@ -1,7 +1,7 @@
 <div class='commitee'>
 
-    <h3 style="text-align:center"> Create Admission Commitee Member</h3>
-
+    <h3 style="text-align:center;color: mediumblue;"> Create Admission Commitee Member</h3>
+    <hr>
     <form #commiteeForm='ngForm' (submit)='createNew(commiteeForm.value)'>
         <div class='form-group'>
             <label for='acmid'>Admission Commitee Member Id</label>
@@ -89,16 +89,16 @@
         <button type='submit' class='btn btn-primary btn-block' [disabled]='commiteeForm.invalid'>Submit</button>
     </form>
 
-    <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
+    <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>
         {{successMessage}}
     </p>
 
-    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+    <div *ngIf='errorMessage != null' class='alert alert-danger text-center' (click)='errorMessage=null'>
         {{errorMessage}}
     </div>
 
     <div *ngIf='validationMessages != null' (click)='validationMessages=null'>
-        <p *ngFor='let msg of validationMessages' class='alert alert-danger'>
+        <p *ngFor='let msg of validationMessages' class='alert alert-danger text-center'>
             {{msg}}
         </p>
     </div>
