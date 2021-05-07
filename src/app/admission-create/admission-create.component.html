@@ -23,12 +23,18 @@
 
         <div class="form-group">
             <label for="admissionDate">Admission Date</label>
-            <input type="date" id='admissionDate' class='form-control' ngModel name='admissionDate' #tadmissionDate='ngModel' />
+            <input type='date' id='admissionDate' class='form-control' ngModel name='admissionDate' #tadmissionDate='ngModel' />
         </div>
 
-        <div class="form-group">
-            <label for="status">Status</label>
-            <input type="text" id='status' class='form-control' ngModel name='status' #tstatus='ngModel' />
+        <div class='form-group'>
+            <label for='status'>Status</label>
+            <select id='status' class="form-control" ngModel name='status' #tstatus='ngModel' required>
+                <!-- <option disabled>Choose Your Role</option> -->
+                <option value="PENDING">
+                    <!--*ngFor='let role of roles'-->
+                    PENDING
+                </option>
+            </select>
         </div>
 
 
