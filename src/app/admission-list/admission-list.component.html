@@ -1,14 +1,20 @@
 <div class='maindiv' *ngIf='errorMessage == null'>
     <h3 style='text-align:center;'>{{header}}</h3>
+    <nav class="navbar navbar-dark bg-primary">
+       
+        <input class="form-control mr-sm-2 topnav-right fa fa-search" type="text" name="status" [(ngModel)]="status" (ngModelChange)="Search()" placeholder="Enter Status to Search">
+    
+    </nav>
+    
     <table class='table table-striped table-bordered'>
         <tr>
-            <th>Admission Id</th>
+            <th (click)="sort('id')"> Admission Id &nbsp; <i class="fa fa-sort"></i> </th>
             <th>Course Id</th>
             <th>Admission Date</th>
             <th>Status</th>
             <th *ngIf='isLoggedin'>Action</th>
         </tr>
-        <tr *ngFor='let admission of admissions' style='padding:2px'>
+        <tr *ngFor='let admission of admissions | orderBy : key : reverse | paginate:{itemsPerPage:3,currentPage:p};' style='padding:2px'>
             <td>{{admission.admissionId}}</td>
             <td>{{admission.courseId}}</td>
             <td>{{admission.admissionDate}}</td>
@@ -23,6 +29,7 @@
 
             </td>
         </tr>
+        <tr><pagination-controls (pageChange) = "p=$event"></pagination-controls></tr>
     </table>
 
     <div *ngIf='message != null' (click)='message=null' class='alert alert-success text-center'>

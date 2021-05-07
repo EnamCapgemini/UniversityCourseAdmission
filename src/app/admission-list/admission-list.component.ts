@@ -49,4 +49,21 @@ export class AdmissionListComponent implements OnInit {
       }
     )
   }
+  status:any;
+  Search(){
+    if (this.status==""){
+      this.ngOnInit();
+    }
+    else{
+      this.admissions=this.admissions.filter(res=>{
+        return res.status.toLocaleLowerCase().match(this.status.toLocaleLowerCase());
+      });
+    }
+  }
+  key:string='id';
+  reverse:boolean=false;
+  sort(key){
+    this.key=key;
+    this.reverse=!this.reverse;
+  }
 }
