@@ -18,8 +18,8 @@ export class AdmissionListComponent implements OnInit {
   isLoggedin: boolean;
 
   ngOnInit(): void {
-    this.loadData();
-
+    //this.loadData();
+    console.log(this.loadData());
     this.isLoggedin = this.service2.isLoggedIn();
   }
 
@@ -43,6 +43,7 @@ export class AdmissionListComponent implements OnInit {
       (data) => {
         this.admissions = data;
         this.errorMessage = null;
+        console.log(data);
       },
       (failResponse) => {
         this.errorMessage = failResponse.error.details;

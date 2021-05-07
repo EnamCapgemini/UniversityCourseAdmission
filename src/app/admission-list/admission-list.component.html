@@ -12,6 +12,7 @@
             <th>Course Id</th>
             <th>Admission Date</th>
             <th>Status</th>
+            <th>Applicant Id</th>
             <th *ngIf='isLoggedin'>Action</th>
         </tr>
         <tr *ngFor='let admission of admissions | orderBy : key : reverse | paginate:{itemsPerPage:3,currentPage:p};' style='padding:2px'>
@@ -19,6 +20,7 @@
             <td>{{admission.courseId}}</td>
             <td>{{admission.admissionDate}}</td>
             <td>{{admission.status}}</td>
+            <td>{{admission.applicant.applicantId}}</td>
             <td *ngIf='isLoggedin'>
                 <!--<button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>
                 &nbsp;&nbsp;-->
