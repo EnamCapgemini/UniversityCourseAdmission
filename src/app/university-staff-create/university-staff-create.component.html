@@ -27,7 +27,7 @@
         
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"/>
         </div>    
         <div *ngIf='tpassword.touched && tpassword.invalid'>
             <div *ngIf="tpassword.errors.required" class='alert alert-danger'>
