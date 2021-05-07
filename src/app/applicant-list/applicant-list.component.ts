@@ -65,7 +65,7 @@ export class ApplicantListComponent implements OnInit {
   }
   setMyStyle() {
     let styles = {
-      'background':'linear-gradient(to left, #2980b9, #6dd5fa, #ffffff)',
+      'background':'linear-gradient(to right, #36d1dc, #5b86e5)',
       'background-repeat':'no-repeat'
     };
     return styles;
