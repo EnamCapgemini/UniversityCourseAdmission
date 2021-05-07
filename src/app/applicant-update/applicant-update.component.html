@@ -14,6 +14,10 @@
                 <td><input type='text' [(ngModel)]='applicant.password'></td>
             </tr>
             <tr>
+                <td>Role </td>
+                <td><input type='text' [(ngModel)]='applicant.role'></td>
+            </tr>
+            <tr>
                 <td>Applicant First Name </td>
                 <td><input type='text' [(ngModel)]='applicant.applicantFirstName'></td>
             </tr>
@@ -34,10 +38,6 @@
                 <td><input type='text' [(ngModel)]='applicant.applicantGraduationPercent'></td>
             </tr>
             <tr>
-                <td>Course Id</td>
-                <td><input type='text' [(ngModel)]='applicant.courseId'></td>
-            </tr>
-            <tr>
                 <td>Address</td>
                 <td><input type='text' [(ngModel)]='applicant.address'></td>
             </tr>
@@ -46,8 +46,12 @@
                 <td><input type='text' [(ngModel)]='applicant.emailId'></td>
             </tr>
             <tr>
-                <td>Gender</td>
+                <td>Gender </td>
                 <td><input type='text' [(ngModel)]='applicant.gender'></td>
+            </tr>
+            <tr>
+                <td>Course Id </td>
+                <td><input type='text' [(ngModel)]='applicant.courseId'></td>
             </tr>
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>

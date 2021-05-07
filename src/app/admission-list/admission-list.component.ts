@@ -70,7 +70,7 @@ export class AdmissionListComponent implements OnInit {
 
   setMyStyle() {
     let styles = { 
-      'background':'linear-gradient(to right, #36d1dc, #5b86e5)',
+      'background':'linear-gradient(to left,  #dbe6f6, #c5796d)',
       'background-repeat':'no-repeat'
     };
     return styles;

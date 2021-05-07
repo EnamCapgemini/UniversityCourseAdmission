@@ -48,10 +48,7 @@ export class ApplicantCreateComponent implements OnInit {
       (failure) => {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
-        this.errorMessage = JSON.parse(failure.error).errorMessage;
-        if(failure.status==400){
-          this.errorMessage="Same id exists";
-        }
+        this.errorMessage = JSON.parse(failure.error).details;
       }
     )
   }
