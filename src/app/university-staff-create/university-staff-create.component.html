@@ -13,14 +13,14 @@
 
         <div class='form-group'>
             <label for='staffname'>Name</label>
-            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel' required minlength="6">
+            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel' required minlength="4">
         </div>
         <div *ngIf='tstaffname.touched && tstaffname.invalid'>
             <div *ngIf='tstaffname.errors.required' class='alert alert-danger'>
                 Please enter name
             </div>
             <div *ngIf='tstaffname.errors.minlength' class='alert alert-danger'>
-                Name must contains atleast 6 characters
+                Name must contains atleast 4 characters
             </div>
         </div>
 

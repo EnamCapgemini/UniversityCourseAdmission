@@ -21,6 +21,12 @@ export class UniversityStaffListComponent implements OnInit {
   message: string = null;
   errorMessage: string = null;
 
+
+  roles: any[] = [
+    { name: 'username' },
+    { name: 'role' }
+  ];
+
   delete(staffId: number): void {
     this.service.deleteStaff(staffId).subscribe(
       (response) => {
@@ -46,6 +52,7 @@ export class UniversityStaffListComponent implements OnInit {
     )
   }
   username:any;
+  
   Search(){
     if (this.username==""){
       this.ngOnInit();
