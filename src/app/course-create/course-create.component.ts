@@ -27,6 +27,9 @@ export class CourseCreateComponent implements OnInit {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
         this.errorMessage = JSON.parse(failure.error).errorMessage;
+        if(failure.status==400){
+          this.errorMessage="Same ID already exists.Please create with new ID."
+        }
       }
 
     )
