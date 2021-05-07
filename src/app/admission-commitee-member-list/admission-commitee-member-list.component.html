@@ -1,4 +1,4 @@
-<div class='maindiv' [ngStyle]="setMyStyle()" *ngIf='errorMessage == null'>
+<div class='maindiv'  *ngIf='errorMessage == null'>
     <h3 style='text-align:center;'>{{header}}</h3>
     <nav class="navbar navbar-dark bg-primary">
 
@@ -6,7 +6,7 @@
             [(ngModel)]="admissionCommiteeMemberName" (ngModelChange)="Search()" placeholder="Enter Name to Search">
 
     </nav>
-    <table class='table table-striped table-bordered'>
+    <table [ngStyle]="setMyStyle()" class='table table-striped table-bordered'>
         <tr>
             <th (click)="sort('id')">ADMISSION COMMITEE MEMBER ID &nbsp; <i class="fa fa-sort"></i> </th>
             <th>ADMISSION COMMITEE MEMBER NAME</th>
