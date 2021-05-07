@@ -14,8 +14,9 @@
             <td>{{admission.admissionDate}}</td>
             <td>{{admission.status}}</td>
             <td>
-                <button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>
-                <!--&nbsp;&nbsp;-->
+                <!--<button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>
+                &nbsp;&nbsp;-->
+                <a [routerLink]="['/admission-delete',admission.admissionId]" class='btn btn-danger'>Delete</a>
                 <a [routerLink]="['/admission-update',admission.admissionId]" class='btn btn-primary'>Modify</a>
                 <a [routerLink]="['/admission-commitee-member-status',admission.admissionId]"
                     class='btn btn-primary'>Status</a>

@@ -28,26 +28,27 @@ import { AdmissionCreateComponent } from './admission-create/admission-create.co
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
+import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component';
 
 const routes: Routes = [
 
   { path: 'staff-create', component: UniversityStaffCreateComponent, canActivate: [AuthguardService] },
-  { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService]},
-  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService]},
+  { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService] },
+  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
   //{ path: 'staff-update', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
-  { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },
-  { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent },
-  { path: 'admission-commitee-member-status/:admissionId', component: AdmissionCommiteeMemberStatusComponent },
-  { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
+  { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-status/:admissionId', component: AdmissionCommiteeMemberStatusComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent, canActivate: [AuthguardService] },
 
 
   { path: 'home', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
-  { path: 'applicant-create', component: ApplicantCreateComponent },
-  { path: 'applicant-list', component: ApplicantListComponent },
-  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent/*canActivate:[AuthguardService]*/ },
+  { path: 'applicant-create', component: ApplicantCreateComponent ,canActivate:[AuthguardService]},
+  { path: 'applicant-list', component: ApplicantListComponent ,canActivate:[AuthguardService]},
+  { path: 'applicant-update/:applicantId', component: ApplicantUpdateComponent,canActivate:[AuthguardService] },
 
 
 
@@ -63,9 +64,10 @@ const routes: Routes = [
   { path: 'changePassword', component: ChangePasswordComponent },
   { path: 'logout', component: LogoutComponent },
 
-  { path: 'admission-create', component: AdmissionCreateComponent },
+  { path: 'admission-create', component: AdmissionCreateComponent ,canActivate: [AuthguardService]},
   { path: 'admission-list', component: AdmissionListComponent },
-  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService] */ },
+  { path: 'admission-delete/:admissionId', component: AdmissionDeleteComponent,canActivate: [AuthguardService] },
+  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent,canActivate: [AuthguardService] },
 
 ];
 

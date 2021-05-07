@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/model/course';
+import { ApplicantServerService } from '../server-service/applicant-server.service';
 import { CourseServerService } from '../server-service/course-server.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { CourseServerService } from '../server-service/course-server.service';
 })
 export class CourseListComponent implements OnInit {
 
-  constructor(private service:CourseServerService) { }
+  constructor(private service:CourseServerService,service2:ApplicantServerService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.loadData();
@@ -35,6 +37,10 @@ export class CourseListComponent implements OnInit {
     )
   }
 
+
+
+
+goApply(){
+  this.router.navigate(["applicant-create"]);
 }
-
-
+}

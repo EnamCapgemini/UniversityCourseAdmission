@@ -12,7 +12,7 @@ export class ApplicantCreateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-  constructor(private service:ApplicantServerService,private route: ActivatedRoute, private router: Router) { }
+  constructor(private service:ApplicantServerService) { }
 
   ngOnInit() {
   }
@@ -49,8 +49,10 @@ export class ApplicantCreateComponent implements OnInit {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
         this.errorMessage = JSON.parse(failure.error).errorMessage;
+        if(failure.status==400){
+          this.errorMessage="Same id exists";
+        }
       }
-
     )
   }
   

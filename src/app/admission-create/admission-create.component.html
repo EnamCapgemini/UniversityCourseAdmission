@@ -36,10 +36,7 @@
                 </option>
             </select>
         </div>
-
-
-
-        <button type='submit' class='btn btn-primary btn-block' [disabled]="admissionForm.invalid">Submit</button>
+      <button type='submit' class='btn btn-primary btn-block' [disabled]="admissionForm.invalid">Submit</button>
     </form>
 
     <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>

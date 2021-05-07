@@ -55,6 +55,13 @@ export class AuthenticationService {
     return this.http.get(url, {headers});
   }
 
+  changePassword(credentials): Observable<any> {
+    let token = localStorage.getItem('token');
+    let url = this.baseUrl + 'changePassword';
+    let headers = new HttpHeaders({ 'Authorization' : token});
+    return this.http.put(url, credentials, {headers, responseType:'text'});
+  }
+
   getSensitive(): Observable<any> {
     let token = localStorage.getItem('token');
     let url = this.baseUrl + 'getSensitive';

@@ -61,7 +61,7 @@
             <label for="courseId">Course Id</label>
             <select id='courseId' class="form-control" ngModel name='courseId' #tcourseId='ngModel' aria-label="Default selected Course Id" required>
                 <option disabled>Choose Your Course</option>
-                <option *ngFor='let course of courses' [value]="course.name">
+                <option *ngFor='let course of courses' [value]="course.number">
                     {{course.number}}
                 </option>
             </select>
