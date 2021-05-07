@@ -32,15 +32,15 @@ import { CourseDeleteComponent } from './course-delete/course-delete.component';
 const routes: Routes = [
 
   { path: 'staff-create', component: UniversityStaffCreateComponent, canActivate: [AuthguardService] },
-  { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService]},
-  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService]},
+  { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService] },
+  { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
   //{ path: 'staff-update', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
 
-  { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent },
-  { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent },
-  { path: 'admission-commitee-member-status/:admissionId', component: AdmissionCommiteeMemberStatusComponent },
-  { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent },
+  { path: 'admission-commitee-member-create', component: AdmissionCommiteeMemberCreateComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-list', component: AdmissionCommiteeMemberListComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-status/:admissionId', component: AdmissionCommiteeMemberStatusComponent, canActivate: [AuthguardService] },
+  { path: 'admission-commitee-member-update/:admissionCommiteeMemberId', component: AdmissionCommiteeMemberUpdateComponent, canActivate: [AuthguardService] },
 
 
   { path: 'home', component: HomeComponent },
