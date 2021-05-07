@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { reduce } from 'rxjs/operators';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 
@@ -71,11 +72,13 @@ export class UniversityStaffListComponent implements OnInit {
     this.reverse=!this.reverse;
   }
 
-  setMyStyle() {
+  /*setMyStyle() {
     let styles = { 
-      'background':'linear-gradient(to right, #36d1dc, #5b86e5)',
-      'background-repeat':'no-repeat'
+     
+      'background': 'linear-gradient(to bottom, #536976, #292e49)',
+      'background-repeat': 'no-repeat'
+     
     };
     return styles;
-}
+}*/
 }
