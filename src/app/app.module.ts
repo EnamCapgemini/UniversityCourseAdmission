@@ -29,11 +29,15 @@ import { AdmissionUpdateComponent } from './admission-update/admission-update.co
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
-import { CourseDeleteComponent } from './course-delete/course-delete.component'
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { CourseDeleteComponent } from './course-delete/course-delete.component';
+import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component'
+
 
 
 @NgModule({
@@ -61,7 +65,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ProfileComponent,
     ChangePasswordComponent,
     AdmissionCommiteeMemberStatusComponent,
-    CourseDeleteComponent
+    CourseDeleteComponent,
+    AdmissionDeleteComponent
   ],
   imports: [
     BrowserModule,
