@@ -1,4 +1,4 @@
-<div class='maindiv' *ngIf='errorMessage == null'>
+<div class='maindiv' [ngStyle]="setMyStyle()" *ngIf='errorMessage == null'>
     <h3 style='text-align:center;'>{{header}}</h3>
     <nav class="navbar navbar-dark bg-primary">
        
