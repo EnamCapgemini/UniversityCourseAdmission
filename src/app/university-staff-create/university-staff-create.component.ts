@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 
@@ -11,8 +12,8 @@ export class UniversityStaffCreateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-
-  constructor(private service: UniversityStaffServerService) { }
+  p:number=1;
+  constructor(private service: UniversityStaffServerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,11 +33,17 @@ export class UniversityStaffCreateComponent implements OnInit {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
         this.errorMessage = JSON.parse(failure.error).errorMessage;
+        /*if (failure.status == 400) {
+          this.errorMessage = "Internal Server Error || Same Id exists";
+        }*/
       }
 
     )
     //console.log(data);
-
+  
+  }
+  goBack(){
+    this.router.navigate(["staff-list"]);
   }
 
 }

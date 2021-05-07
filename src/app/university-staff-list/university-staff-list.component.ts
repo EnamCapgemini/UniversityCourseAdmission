@@ -41,8 +41,26 @@ export class UniversityStaffListComponent implements OnInit {
         this.errorMessage = null;
       },
       (failResponse) => {
-        this.errorMessage = failResponse.error.errorMessage;
+        this.errorMessage = failResponse.error.details;
       }
     )
+  }
+  username:any;
+  Search(){
+    if (this.username==""){
+      this.ngOnInit();
+    }
+    else{
+      this.staffs=this.staffs.filter(res=>{
+        return res.username.toLocaleLowerCase().match(this.username.toLocaleLowerCase());
+      });
+    }
+  }
+
+  key:string='id';
+  reverse:boolean=false;
+  sort(key){
+    this.key=key;
+    this.reverse=!this.reverse;
   }
 }

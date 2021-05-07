@@ -16,8 +16,10 @@
             </tr>
         </table>
     </div>
-
-    <div *ngIf='errorMessage != null' class='alert alert-danger'>
+    <div *ngIf='successMessage != null' class='alert alert-success text-center'>
+        {{successMessage}}
+    </div>
+    <div *ngIf='errorMessage != null' class='alert alert-danger text-center'>
         {{errorMessage}}
     </div>
 </div>

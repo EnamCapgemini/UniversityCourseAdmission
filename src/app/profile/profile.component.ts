@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   userdetails: UserDetails = null;
 
   errorMessage: String = null;
-
+  successMessage:string=null;
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService
@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
       this.authenticationService.getUserDetails().subscribe(
         (result) => {
           this.userdetails = result;
+          this.successMessage="successfully logged in";
         },
         (fail) => {
           this.errorMessage = fail.error.errorMessage;
