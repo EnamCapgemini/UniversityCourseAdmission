@@ -13,7 +13,6 @@ export class ProfileComponent implements OnInit {
   userdetails: UserDetails = null;
 
   errorMessage: String = null;
-  info: any = null;
 
   constructor(
     private router: Router,
@@ -31,14 +30,9 @@ export class ProfileComponent implements OnInit {
           
         }
       );
-
-      this.info = this.authenticationService.getSensitive().subscribe(
-        (result) => {
-          this.info = result;
-        },
-        (fail) => {
-        }
-      );
+    }
+    else {
+      this.errorMessage = "You have not loogged in";
     }
   }
 

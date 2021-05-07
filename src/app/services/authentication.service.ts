@@ -32,7 +32,11 @@ export class AuthenticationService {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    let token = localStorage.getItem('token');
+    let url = this.baseUrl + 'remove';
+    let headers = new HttpHeaders({'Authorization' : token});
+    return this.http.get(url, {headers, responseType:'text'});
+    //localStorage.removeItem('token');
   }
 
   isLoggedIn() {

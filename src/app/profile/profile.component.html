@@ -17,11 +17,7 @@
         </table>
     </div>
 
-    <div *ngIf='errorMessage != null' class='alert alert-danger' (click)='errorMessage=null'>
+    <div *ngIf='errorMessage != null' class='alert alert-danger'>
         {{errorMessage}}
-    </div>
-
-    <div *ngIf='info != null' class='alert alert-danger' (click)='info=null'>
-        {{info}}
     </div>
 </div>

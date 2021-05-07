@@ -12,15 +12,25 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  message:string;
+  message:any;
+  errorMessage:any;
+
   constructor(authService:AuthenticationService) {
     if(authService.isLoggedIn()){
-    authService.logout();
-    this.message="You have been successfully logged out";
+      authService.logout().subscribe(
+        (result) => {
+          localStorage.removeItem('token');
+          this.message="You have been successfully logged out";
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
-    else{
-      this.message="You have not loogged in";
+    else {
+      this.errorMessage="You have not loogged in";
     }
+    
    }
 
 }
