@@ -5,7 +5,7 @@
         <input class="form-control mr-sm-2 topnav-right fa fa-search" type="text" name="applicantDegree" [(ngModel)]="applicantDegree" (ngModelChange)="Search()" placeholder="Enter Applicant Degree to Search">
     
     </nav>
-    <table class='table table-striped table-bordered'>
+    <table class='table table-striped table-bordered' [ngStyle]="setMyStyle()">
         <tr>
             <th (click)="sort('id')"> Applicant Id &nbsp; <i class="fa fa-sort"></i></th>
             <th>Username</th>

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' />
+            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' required/>
         </div>
         <div *ngIf='tpassword.touched && tpassword.invalid'>
             <div *ngIf='tpassword.errors.required' class='alert alert-danger'>
@@ -84,6 +84,7 @@
             </select>
         </div>
         <button type='submit' class='btn btn-primary btn-block' [disabled]="applicantForm.invalid">Submit</button>
+        <button type='reset' class='btn btn-primary btn-block'>Reset Form</button>
     </form>
     <p class='alert alert-success' *ngIf='successMessage != null' (click)='successMessage=null'>
         {{successMessage}}
