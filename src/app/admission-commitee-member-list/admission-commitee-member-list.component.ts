@@ -47,4 +47,23 @@ export class AdmissionCommiteeMemberListComponent implements OnInit {
     )
   }
 
+  admissionCommiteeMemberName: any;
+  Search() {
+    if (this.admissionCommiteeMemberName == "") {
+      this.ngOnInit();
+    }
+    else {
+      this.admissionCommiteeMembers = this.admissionCommiteeMembers.filter(res => {
+        return res.admissionCommiteeMemberName.toLocaleLowerCase().match(this.admissionCommiteeMemberName.toLocaleLowerCase());
+      });
+    }
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
 }
