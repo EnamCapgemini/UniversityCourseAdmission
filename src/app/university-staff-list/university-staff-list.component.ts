@@ -72,13 +72,13 @@ export class UniversityStaffListComponent implements OnInit {
     this.reverse=!this.reverse;
   }
 
-  /*setMyStyle() {
+  setMyStyle() {
     let styles = { 
      
-      'background': 'linear-gradient(to bottom, #536976, #292e49)',
+      'background': 'linear-gradient(to left, #dbe6f6, #c5796d)',
       'background-repeat': 'no-repeat'
      
     };
     return styles;
-}*/
+}
 }
