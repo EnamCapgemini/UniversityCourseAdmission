@@ -40,7 +40,7 @@ export class AdmissionListComponent implements OnInit {
         this.errorMessage = null;
       },
       (failResponse) => {
-        this.errorMessage = failResponse.error.errorMessage;
+        this.errorMessage = failResponse.error.details;
       }
     )
   }

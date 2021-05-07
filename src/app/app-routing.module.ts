@@ -28,6 +28,7 @@ import { AdmissionCreateComponent } from './admission-create/admission-create.co
 import { AdmissionUpdateComponent } from './admission-update/admission-update.component';
 import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
+import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component';
 
 const routes: Routes = [
 
@@ -63,9 +64,10 @@ const routes: Routes = [
   { path: 'changePassword', component: ChangePasswordComponent },
   { path: 'logout', component: LogoutComponent },
 
-  { path: 'admission-create', component: AdmissionCreateComponent },
+  { path: 'admission-create', component: AdmissionCreateComponent ,canActivate: [AuthguardService]},
   { path: 'admission-list', component: AdmissionListComponent },
-  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent, /*canActivate: [AuthguardService] */ },
+  { path: 'admission-delete/:admissionId', component: AdmissionDeleteComponent,canActivate: [AuthguardService] },
+  { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent,canActivate: [AuthguardService] },
 
 ];
 
