@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Applicant } from 'src/model/applicant';
 import { ApplicantServerService } from '../server-service/applicant-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-applicant-list',
@@ -10,12 +11,13 @@ import { ApplicantServerService } from '../server-service/applicant-server.servi
 })
 export class ApplicantListComponent implements OnInit {
 
-  constructor(private service: ApplicantServerService) { }
-
+  constructor(private service: ApplicantServerService,private service2:AuthenticationService) { }
+  isLoggedin:boolean;
   header: string = "List of Applicants";
 
   ngOnInit(): void {
     this.loadData();
+    this.isLoggedin=this.service2.isLoggedIn();
   }
   applicants: Applicant[];
   message: string = null;
@@ -43,5 +45,22 @@ export class ApplicantListComponent implements OnInit {
         this.errorMessage = failResponse.error.details;
       }
     )
+  }
+  applicantDegree:any;
+  Search(){
+    if (this.applicantDegree==""){
+      this.ngOnInit();
+    }
+    else{
+      this.applicants=this.applicants.filter(res=>{
+        return res.applicantDegree.toLocaleLowerCase().match(this.applicantDegree.toLocaleLowerCase());
+      });
+    }
+  }
+  key:string='id';
+  reverse:boolean=false;
+  sort(key){
+    this.key=key;
+    this.reverse=!this.reverse;
   }
 }
