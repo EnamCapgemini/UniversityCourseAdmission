@@ -6,14 +6,14 @@
             <th>Course Id</th>
             <th>Admission Date</th>
             <th>Status</th>
-            <th>Action</th>
+            <th *ngIf='isLoggedin'>Action</th>
         </tr>
         <tr *ngFor='let admission of admissions' style='padding:2px'>
             <td>{{admission.admissionId}}</td>
             <td>{{admission.courseId}}</td>
             <td>{{admission.admissionDate}}</td>
             <td>{{admission.status}}</td>
-            <td>
+            <td *ngIf='isLoggedin'>
                 <!--<button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>
                 &nbsp;&nbsp;-->
                 <a [routerLink]="['/admission-delete',admission.admissionId]" class='btn btn-danger'>Delete</a>

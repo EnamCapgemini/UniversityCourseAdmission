@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Admission } from 'src/model/admission';
 import { AdmissionServerService } from '../server-service/admission-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-admission-list',
@@ -10,12 +11,16 @@ import { AdmissionServerService } from '../server-service/admission-server.servi
 })
 export class AdmissionListComponent implements OnInit {
 
-  constructor(private service: AdmissionServerService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: AdmissionServerService, private service2: AuthenticationService, private route: ActivatedRoute, private router: Router) { }
 
   header: string = "List of Admissions";
 
+  isLoggedin: boolean;
+
   ngOnInit(): void {
     this.loadData();
+
+    this.isLoggedin = this.service2.isLoggedIn();
   }
 
   admissions: Admission[];
