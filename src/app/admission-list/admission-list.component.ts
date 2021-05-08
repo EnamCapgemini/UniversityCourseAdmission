@@ -15,12 +15,18 @@ export class AdmissionListComponent implements OnInit {
 
   header: string = "List of Admissions";
 
-  isLoggedin: boolean;
+  isLoggedin: boolean = false;
+  role: string = null;
+  roleMessage: string = null;
 
   ngOnInit(): void {
-    //this.loadData();
-    console.log(this.loadData());
-    this.isLoggedin = this.service2.isLoggedIn();
+    if(this.service2.isLoggedIn()) {
+      this.role = localStorage.getItem('role');
+      if( this.role != 'ADMIN' && this.role != 'COMMITEE' && this.role != 'APPLICANT') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
+    this.loadData();
   }
 
   admissions: Admission[];

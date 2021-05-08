@@ -1,4 +1,4 @@
-<div class='maindiv'  *ngIf='errorMessage == null'>
+<div class='maindiv'  *ngIf='errorMessage == null && roleMessage == null'>
     <h3 style='text-align:center;color: mediumblue;'>{{header}}</h3>
     <nav class="navbar navbar-dark bg-primary">
        
@@ -13,7 +13,7 @@
             <th>Admission Date</th>
             <th>Status</th>
             <th>Applicant Id</th>
-            <th *ngIf='isLoggedin'>Action</th>
+            <th *ngIf='isLoggedin && role == "COMMITEE" || role == "ADMIN" || role == "COMMITEE"'>Action</th>
         </tr>
         <tr *ngFor='let admission of admissions | orderBy : key : reverse | paginate:{itemsPerPage:3,currentPage:p};' style='padding:2px'>
             <td>{{admission.admissionId}}</td>
@@ -21,7 +21,7 @@
             <td>{{admission.admissionDate}}</td>
             <td>{{admission.status}}</td>
             <td>{{admission.applicant.applicantId}}</td>
-            <td *ngIf='isLoggedin'>
+            <td *ngIf='isLoggedin && role == "COMMITEE" || role == "ADMIN" || role == "COMMITEE"'>
                 <!--<button class='btn btn-danger' (click)='delete(admission.admissionId)'>Delete</button>
                 &nbsp;&nbsp;-->
                 <a [routerLink]="['/admission-delete',admission.admissionId]" class='btn btn-danger'>Delete</a>
@@ -40,4 +40,8 @@
 </div>
 <div class='alert alert-danger text-center' *ngIf='errorMessage != null'>
     <h2>{{errorMessage}}</h2>
+</div>
+
+<div class='alert alert-danger text-center' *ngIf='roleMessage != null'>
+    <h2>{{roleMessage}}</h2>
 </div>

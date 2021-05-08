@@ -1,4 +1,4 @@
-<div class='commitee'>
+<div *ngIf='roleMessage == null' class='commitee'>
 
     <h3 style="text-align:center;color: mediumblue;"> Create Admission Commitee Member</h3>
     <hr>
@@ -102,4 +102,8 @@
             {{msg}}
         </p>
     </div>
+</div>
+
+<div *ngIf='roleMessage != null' class='alert alert-danger text-center'>
+    {{roleMessage}}
 </div>

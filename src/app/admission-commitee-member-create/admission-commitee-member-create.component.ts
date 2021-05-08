@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
 import { AdmissionCommiteeMemberServerService } from '../server-service/admission-commitee-member-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-admission-commitee-member-create',
@@ -13,11 +14,21 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   errorMessage: string = null;
   successMessage: string = null;
   flag: boolean;
-  constructor(private service: AdmissionCommiteeMemberServerService) {
+
+  role: string = null;
+  roleMessage: string = null;
+
+  constructor(private service: AdmissionCommiteeMemberServerService, private loginService:AuthenticationService) {
 
   }
 
   ngOnInit() {
+    if(this.loginService.isLoggedIn()) {
+      this.role = localStorage.getItem('role');
+      if(this.role != 'COMMITEE' && this.role != 'ADMIN') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
 
   }
 

@@ -1,4 +1,4 @@
-<div class='admission'>
+<div class='admission' *ngIf='roleMessage == null'>
 
     <h3 style="text-align:center;color: mediumblue;"> Create New Admission</h3>
     <hr>
@@ -52,4 +52,8 @@
             {{msg}}
         </p>
     </div>
+</div>
+
+<div *ngIf='roleMessage != null' class='alert alert-danger text-center'>
+    {{roleMessage}}
 </div>

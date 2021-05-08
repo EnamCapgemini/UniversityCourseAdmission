@@ -1,4 +1,4 @@
-<div class='maindiv'  *ngIf='errorMessage == null'>
+<div class='maindiv'  *ngIf='errorMessage == null && roleMessage == null'>
     <h3 style='text-align:center;color: mediumblue;'>{{header}}</h3>
     <nav class="navbar navbar-dark bg-primary">
 
@@ -37,4 +37,7 @@
 </div>
 <div class='alert alert-danger text-center' *ngIf='errorMessage != null'>
     <h2>{{errorMessage}}</h2>
+</div>
+<div class='alert alert-danger text-center' *ngIf='roleMessage != null'>
+    <h2>{{roleMessage}}</h2>
 </div>
