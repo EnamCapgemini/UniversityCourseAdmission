@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     if(!this.authenticationService.isLoggedIn()) {
-      this.message = "You have not logged in yet!!";
+      this.errorMessage = "You have not logged in yet!!";
     }
   }
 
@@ -33,7 +33,5 @@ export class ChangePasswordComponent implements OnInit {
           this.errorMessage = fail.error.details;
         }
       );
-
   }
-
 }

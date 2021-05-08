@@ -19,18 +19,17 @@ export class LogoutComponent implements OnInit {
     if(authService.isLoggedIn()){
       authService.logout().subscribe(
         (result) => {
-          localStorage.removeItem('token');
+          localStorage.clear();
           this.message="You have successfully logged out !";
         },
         (error) => {
-          console.log(error);
+          this.errorMessage= error.error;
         }
       );
     }
     else {
       this.errorMessage="You have not logged in! Please Log in to continue..";
-    }
-    
+    }  
    }
 
 }

@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class AuthenticationService {
 
   baseUrl: String = 'http://localhost:8082/';
+  Role: string;
 
   constructor(private http: HttpClient) {
   }
@@ -26,7 +27,6 @@ export class AuthenticationService {
           }
         },
         error => error
-
       )
     );
   }
@@ -36,7 +36,6 @@ export class AuthenticationService {
     let url = this.baseUrl + 'remove';
     let headers = new HttpHeaders({'Authorization' : token});
     return this.http.get(url, {headers, responseType:'text'});
-    //localStorage.removeItem('token');
   }
 
   isLoggedIn() {
@@ -62,10 +61,10 @@ export class AuthenticationService {
     return this.http.put(url, credentials, {headers, responseType:'text'});
   }
 
-  getSensitive(): Observable<any> {
+  getRole(): Observable<any> {
     let token = localStorage.getItem('token');
-    let url = this.baseUrl + 'getSensitive';
+    let url = this.baseUrl + 'getRole';
     let headers = new HttpHeaders({ 'Authorization' : token});
-    return this.http.get(url, {headers, responseType:'text'});
+    return this.http.get(url, {headers, responseType: 'text'});
   }
 }

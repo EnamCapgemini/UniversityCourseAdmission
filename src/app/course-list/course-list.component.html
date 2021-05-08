@@ -21,7 +21,7 @@
             <th>Course End Date</th>
 
             <th>Course Fees</th>
-            <th *ngIf='isLoggedin'>ACTION</th>
+            <th *ngIf='isLoggedin && role == "STAFF"'>ACTION</th>
 
         </tr>
         <tr *ngFor='let course of courses | orderBy : key : reverse | paginate:{itemsPerPage:5,currentPage:p};' style='padding:2px'>
@@ -31,7 +31,7 @@
             <td>{{course.courseStartDate}}</td>
             <td>{{course.courseEndDate}}</td>
             <td>{{course.courseFees}}</td>
-            <td *ngIf='isLoggedin'>
+            <td *ngIf='isLoggedin && role == "STAFF"'>
 
 
                 <a [routerLink]="['/course-delete',course.courseId]" class='btn btn-danger'>Delete</a>&nbsp;&nbsp;

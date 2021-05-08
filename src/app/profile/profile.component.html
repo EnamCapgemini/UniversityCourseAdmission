@@ -1,15 +1,17 @@
-<div class='user'>
+<div class='user' [ngStyle]="setMyStyle()">
     <div *ngIf='userdetails != null'>
         <h3 style=' color:mediumblue;text-align:center;'>User Details</h3>
         <table class='table' [ngStyle]="setMyStyle()">
             <tr>
-                <th>UserName</th>
-                <th>Password</th>
-                <th>Role</th>
+                <td><b>User Name: </b></td>
+                <td>{{userdetails.username}}</td>
             </tr>
             <tr>
-                <td>{{userdetails.username}}</td>
+                <td><b>Password:</b></td>
                 <td>{{userdetails.password}}</td>
+            </tr>
+            <tr> 
+                <td><b>Role:</b></td>
                 <td>{{userdetails.role}}</td>
             </tr>
         </table>
