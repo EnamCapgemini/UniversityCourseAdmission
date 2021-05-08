@@ -14,12 +14,12 @@ export class AboutusComponent implements OnInit {
   }
 
   aboutUs:aboutus[]=[
-    {name:'Md Enam',role:'Team Leader',description:'Capgemini ID: 46059502',mailId:'enam@gmail.com'},
-    {name:'Supratim',role:'Colleagues1',description:'Capgemini ID: 46060201',mailId:'supratim.sarkar@capgemini.com'},
-    {name:'Pritam',role:'Colleagues2',description:'Capgemini ID: 46060215',mailId:'pritam@gmail.com'},
-    {name:'Milan',role:'Colleagues3',description:'Capgemini ID: 46059162',mailId:'milan@gmail.com'},
-    {name:'Ayush',role:'Colleagues4',description:'Capgemini ID: 46060216',mailId:'ayush@gmail.com'},
-    {name:'Anirban',role:'Colleagues5',description:'Capgemini ID: 46060210',mailId:'anirban@gmail.com'}
+    {name:'Md Enam',role:'Team Leader',description:'Capgemini ID: 46059502',mailId:'enam@capgemini.com'},
+    {name:'Supratim',role:'Colleague1',description:'Capgemini ID: 46060201',mailId:'supratim@capgemini.com'},
+    {name:'Pritam',role:'Colleague2',description:'Capgemini ID: 46060215',mailId:'pritam@capgemini.com'},
+    {name:'Milan',role:'Colleague3',description:'Capgemini ID: 46059162',mailId:'milan@capgemini.com'},
+    {name:'Ayush',role:'Colleague4',description:'Capgemini ID: 46060216',mailId:'ayush@capgemini.com'},
+    {name:'Anirban',role:'Colleague5',description:'Capgemini ID: 46060210',mailId:'anirban@capgemini.com'}
   ]
 
 }
