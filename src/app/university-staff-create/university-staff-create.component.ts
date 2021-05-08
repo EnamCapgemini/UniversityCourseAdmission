@@ -57,5 +57,11 @@ export class UniversityStaffCreateComponent implements OnInit {
   goBack(){
     this.router.navigate(["staff-list"]);
   }
-
+  setMyStyle() {
+    let styles = { 
+      'background':'linear-gradient(  #6dd5fa, #ffffff,#2980b9)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
+}
 }

@@ -1,12 +1,11 @@
-<div *ngIf='roleMessage == null' class='commitee'>
+<div *ngIf='roleMessage == null' class='commitee' [ngStyle]="setMyStyle()">
 
     <h3 style="text-align:center;color: mediumblue;"> Create Admission Commitee Member</h3>
     <hr>
     <form #commiteeForm='ngForm' (submit)='createNew(commiteeForm.value)'>
         <div class='form-group'>
             <label for='acmid'>Admission Commitee Member Id</label>
-            <input id='acmid' class='form-control' type='text' ngModel name='admissionCommiteeMemberId' #tid='ngModel'
-                required>
+            <input id='acmid' class='form-control' type='text' ngModel name='admissionCommiteeMemberId' #tid='ngModel' required>
         </div>
         <div *ngIf='tid.touched && tid.invalid' class='alert alert-danger'>
             Please enter admission commitee member id. This field required
@@ -14,8 +13,7 @@
 
         <div class='form-group'>
             <label for='nm'>Admission Commitee Member Name</label>
-            <input id='nm' class='form-control' type='text' ngModel name='admissionCommiteeMemberName' #tname='ngModel'
-                required>
+            <input id='nm' class='form-control' type='text' ngModel name='admissionCommiteeMemberName' #tname='ngModel' required>
         </div>
         <div *ngIf='tname.touched && tname.invalid'>
             <div *ngIf='tname.errors.required' class='alert alert-danger'>
@@ -25,9 +23,7 @@
         </div>
         <div class='form-group'>
             <label for='con'>Admission Commitee Member Contact</label>
-            <input id='con' class='form-control' type='text' ngModel name='admissionCommiteeMemberContact'
-                #tcontact='ngModel' required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                title="Please enter valid email">
+            <input id='con' class='form-control' type='text' ngModel name='admissionCommiteeMemberContact' #tcontact='ngModel' required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Please enter valid email">
         </div>
 
         <!-- <div *ngIf='tcontact.touched && tcontact.invalid' class='alert alert-danger'>
@@ -55,8 +51,7 @@
 
         <div class='form-group'>
             <label for='staffname'>Username</label>
-            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel'
-                required minlength="6">
+            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel' required minlength="6">
         </div>
         <div *ngIf='tstaffname.touched && tstaffname.invalid'>
             <div *ngIf='tstaffname.errors.required' class='alert alert-danger'>
@@ -70,17 +65,15 @@
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel'
-                required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" />
+            <input type="password" id='password' class='form-control' ngModel name='password' #tpassword='ngModel' required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+            />
         </div>
         <div *ngIf='tpassword.touched && tpassword.invalid'>
             <div *ngIf="tpassword.errors.required" class='alert alert-danger'>
                 Password is required
             </div>
             <div *ngIf="tpassword.errors.pattern" class='alert alert-danger'>
-                Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more
-                characters
+                Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters
             </div>
         </div>
 
