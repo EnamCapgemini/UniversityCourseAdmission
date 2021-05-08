@@ -89,7 +89,7 @@ row::after{
     width:70%;height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
-    animation: change 20s infinite linear;
+    animation: change 40s infinite linear;
 }
 
 @keyframes change{
