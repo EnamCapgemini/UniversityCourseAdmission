@@ -26,11 +26,25 @@
         <div class='form-group'>
             <label for='con'>Admission Commitee Member Contact</label>
             <input id='con' class='form-control' type='text' ngModel name='admissionCommiteeMemberContact'
-                #tcontact='ngModel' required>
+                #tcontact='ngModel' required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                title="Please enter valid email">
         </div>
-        <div *ngIf='tcontact.touched && tcontact.invalid' class='alert alert-danger'>
+
+        <!-- <div *ngIf='tcontact.touched && tcontact.invalid' class='alert alert-danger'>
             Please enter contact
         </div>
+        <div *ngIf="tcontact.errors.pattern" class='alert alert-danger'>
+            Please enter valid email
+        </div> -->
+        <div *ngIf='tcontact.touched && tcontact.invalid'>
+            <div *ngIf="tcontact.errors.required" class='alert alert-danger'>
+                Please enter contact
+            </div>
+            <div *ngIf="tcontact.errors.pattern" class='alert alert-danger'>
+                Please enter valid email
+            </div>
+        </div>
+
         <div class='form-group'>
             <label for='staffid'>Staff Id</label>
             <input type='text' id='staffid' class='form-control' ngModel name='staffId' #tstaffId='ngModel' required>
@@ -40,7 +54,7 @@
         </div>
 
         <div class='form-group'>
-            <label for='staffname'>Name</label>
+            <label for='staffname'>Username</label>
             <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel'
                 required minlength="6">
         </div>
@@ -73,9 +87,7 @@
         <div class='form-group'>
             <label for='role'>Role</label>
             <select id='role' class="form-control" ngModel name='role' #tstaffrole='ngModel' required>
-                <!-- <option disabled>Choose Your Role</option> -->
-                <option value="COMMITEE">
-                    <!--*ngFor='let role of roles'-->
+                <option value="COMMITEE" selected>
                     COMMITEE
                 </option>
             </select>
@@ -87,6 +99,8 @@
         </div>
 
         <button type='submit' class='btn btn-primary btn-block' [disabled]='commiteeForm.invalid'>Submit</button>
+        <button type='reset' class='btn btn-primary btn-block'>Reset Form</button>
+
     </form>
 
     <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>

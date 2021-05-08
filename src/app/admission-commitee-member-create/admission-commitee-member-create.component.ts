@@ -18,15 +18,15 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   role: string = null;
   roleMessage: string = null;
 
-  constructor(private service: AdmissionCommiteeMemberServerService, private loginService:AuthenticationService) {
+  constructor(private service: AdmissionCommiteeMemberServerService, private loginService: AuthenticationService) {
 
   }
 
   ngOnInit() {
-    if(this.loginService.isLoggedIn()) {
+    if (this.loginService.isLoggedIn()) {
       this.role = localStorage.getItem('role');
-      if(this.role != 'COMMITEE' && this.role != 'ADMIN') {
-        this.roleMessage = ' Access Denied for  '+this.role;
+      if (this.role != 'COMMITEE' && this.role != 'ADMIN') {
+        this.roleMessage = ' Access Denied for  ' + this.role;
       }
     }
 
@@ -51,11 +51,12 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
         this.successMessage = message;
         this.validationMessages = null;
         this.errorMessage = null;
+        console.log(data)
       },
       (failure) => {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
-        //this.errorMessage = JSON.parse(failure.error).errorMessage;
+        // this.errorMessage = JSON.parse(failure.error).message;
         this.errorMessage = JSON.parse(failure.error).details;
       }
 
