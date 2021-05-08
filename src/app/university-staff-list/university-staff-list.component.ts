@@ -75,7 +75,7 @@ export class UniversityStaffListComponent implements OnInit {
   setMyStyle() {
     let styles = { 
      
-      'background': 'linear-gradient(to left, #dbe6f6, #c5796d)',
+      'background': 'linear-gradient( #dbe6f6, #c5796d)',
       'background-repeat': 'no-repeat'
      
     };
