@@ -1,29 +1,31 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-  }
-  
-  html {
+}
+
+html {
     box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
-  
-  .column {
+}
+
+.column {
     float: left;
     width: 33.3%;
     margin-bottom: 16px;
     padding: 0 8px;
-  }
-  
-  .card {
+}
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-  }
-  
-  .about-section {
+}
+
+.about-section {
     height: 500px;
     padding: 50px;
     text-align: center;
@@ -31,27 +33,29 @@ body {
     color: blue;
     background-size: cover;
     background-repeat: no-repeat;
-    
-  }
-  
-  .container {
+}
+
+.container {
     padding: 0 16px;
-    background-color: royalblue;
-  }
-  h2{
+    background-color: powderblue;
+}
+
+h2 {
     color: rgb(47, 2, 53);
-  }
-  .container::after, .row::after {
+}
+
+.container::after,
+.row::after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  .title {
+}
+
+.title {
     color: grey;
-  }
-  
-  .button {
+}
+
+.button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -61,15 +65,15 @@ body {
     text-align: center;
     cursor: pointer;
     width: 100%;
-  }
-  
-  .container:hover {
-    background-color:green;
-  }
-  
-  @media screen and (max-width: 650px) {
+}
+
+.container:hover {
+    background-color: green;
+}
+
+@media screen and (max-width: 650px) {
     .column {
-      width: 100%;
-      display: block;
+        width: 100%;
+        display: block;
     }
-  }
+}
