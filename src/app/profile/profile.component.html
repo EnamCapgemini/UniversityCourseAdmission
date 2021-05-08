@@ -1,4 +1,4 @@
-<div class='user'>
+<div class='user' [ngStyle]="setMyStyle()">
     <div *ngIf='userdetails != null'>
         <h3 style=' color:mediumblue;text-align:center;'>User Details</h3>
         <table class='table' [ngStyle]="setMyStyle()">

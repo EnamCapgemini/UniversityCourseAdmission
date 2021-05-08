@@ -1,4 +1,4 @@
-<div class='course'>
+<div *ngIf='roleMessage == null' class='course'>
 
     <h3 style="text-align:center;color: mediumblue;"> Create New Course</h3>
     <hr>
@@ -76,4 +76,8 @@
             {{msg}}
         </p>
     </div>
+</div>
+
+<div *ngIf='roleMessage != null' class='alert alert-danger text-center'>
+    {{roleMessage}}
 </div>
