@@ -19,7 +19,7 @@
             <th>Address</th>
             <th>Email Id</th>
             <th>Gender</th>
-            <th *ngIf='isLoggedin'>Action</th>
+            <th *ngIf='isLoggedin && role == "COMMITEE"'>Action</th>
         </tr>
         <tr *ngFor='let app of applicants | orderBy : key : reverse | paginate:{itemsPerPage:3,currentPage:p};' style='padding:2px'>
             <td>{{app.applicantId}}</td>
@@ -34,7 +34,7 @@
             <td>{{app.address}}</td>
             <td>{{app.emailId}}</td>
             <td>{{app.gender}}</td>
-            <td *ngIf='isLoggedin'> 
+            <td *ngIf='isLoggedin && role == "COMMITEE" || role == "ADMIN"'> 
                 <button class='btn btn-danger' (click)='delete(app.applicantId)'>Delete</button>
                 <a [routerLink]="['/applicant-update',app.applicantId]" class='btn btn-primary'>Modify</a>
             </td>

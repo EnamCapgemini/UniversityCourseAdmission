@@ -3,6 +3,7 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
 import { reduce } from 'rxjs/operators';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-university-staff-list',
@@ -10,9 +11,20 @@ import { UniversityStaffServerService } from '../server-service/university-staff
   styleUrls: ['./university-staff-list.component.css']
 })
 export class UniversityStaffListComponent implements OnInit {
-  constructor(private service: UniversityStaffServerService) { }
+  constructor(private service: UniversityStaffServerService, private loginService:AuthenticationService) { }
+
+  isLoggedin: boolean = false;
+  role: string = null;
+  roleMessage: string = null;
 
   ngOnInit(): void {
+    if(this.loginService.isLoggedIn()) {
+      this.isLoggedin = true;
+      this.role = localStorage.getItem('role');
+      if(this.role != 'STAFF' && this.role != 'ADMIN' && this.role != 'COMMITEE') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
     this.loadData();
   }
 

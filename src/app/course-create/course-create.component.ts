@@ -23,7 +23,7 @@ export class CourseCreateComponent implements OnInit {
   ngOnInit(): void {
     if(this.loginService.isLoggedIn()) {
       this.role = localStorage.getItem('role');
-      if(this.role != 'STAFF') {
+      if(this.role != 'STAFF' && this.role != 'ADMIN') {
         this.roleMessage = ' Access Denied for  '+this.role;
       }
     }
