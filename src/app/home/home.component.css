@@ -14,30 +14,31 @@ h3{
     animation: pulse 10s infinite linear;
 }
 @keyframes pulse {
-    0%{background-color:black;}
-    20%{background-color:goldenrod;}
-    40%{background-color: blue;}
-    60%{background-color:green;}
-    80%{background-color: crimson;}
-    100%{background-color:black;}
+    0%{background-color:rgb(228, 13, 13);}
+    20%{background-color:rgb(245, 145, 14);}
+    40%{background-color: rgb(11, 184, 103);}
+    60%{background-color:rgb(17, 146, 221);}
+    80%{background-color: rgb(24, 41, 201);}
+    100%{background-color:rgb(204, 18, 157);}
 }
 .row{
     width:100%; 
     display: flex;
 }
 .slider{
+    margin-top: 5px;
     width:70%;height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     animation: change 20s infinite linear;
 }
 @keyframes change{
-    0%{background-image: url(https://content3.jdmagicbox.com/comp/mumbai/k9/022pxx22.xx22.111115124001.w3k9/catalogue/university-sports-pavilion-marine-lines-mumbai-sports-ground-4d07uf4.jpg?clr=333333);}
-    20%{background-image: url(https://indiachronicles.com/wp-content/uploads/2019/08/canteen-du-800x400.jpg);}
-    40%{background-image: url(https://lh3.googleusercontent.com/proxy/PhplN05-xla9j2ecJz5qxau8dilwrY-8wteUIDeWhwM9cbRjR4_bGqETjlsXvrSVje6E_DtdYtzUrLuxZJ_rAUKySkxrUKc_czYE);}
-    60%{background-image: url(https://www.lancaster.ac.uk/media/lancaster-university/content-assets/images/alumni/new-alumni-website/LUJMedical02.jpg);}
-    80%{background-image: url(https://www.qub.ac.uk/home/media/Media,1003429,smxx.jpg);}
-    100%{background-image: url(https://www.studentproblems.com/wp-content/uploads/2020/03/lecture.jpg);}
+    0%{background-image: url(https://theithacan.org/wp-content/uploads/2014/10/Laptops_CH-1024x576.jpg);}
+    20%{background-image: url(https://dz01iyojmxk8t.cloudfront.net/wp-content/uploads/2019/10/25141900/college-library.jpg);}
+    40%{background-image: url(https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/28997/2020/2/6/Sports%20of%20Shri%20Dharmasthala%20Manjunatheshwara%20University%20Dharwad_Sports.jpg);}
+    60%{background-image: url(https://www.shreesathyam.edu.in/wp-content/uploads/2017/11/1-1-800x430.jpg);}
+    80%{background-image: url(https://cache.careers360.mobi/media/presets/720X480/colleges/social-media/media-gallery/20830/2019/5/30/Auditorium%20of%20NSHM%20College%20of%20Management%20and%20Technology%20Durgapur_Auditorium.jpg);}
+    100%{background-image: url(https://lh3.googleusercontent.com/proxy/pOaYNWI7CgqAlCBjY0WjhjHOATeZ70hh6uKHic8jaznK1Xz7p74BFp-PCW5nfWqHtIuRaX7lFmddFbx0LVTS9qVhhWu8CexSAw);}
 }
 .contact{
     width: 30%;height:500px;
