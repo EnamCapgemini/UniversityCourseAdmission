@@ -13,11 +13,21 @@ import { AuthenticationService } from '../services/authentication.service';
 export class CourseListComponent implements OnInit {
 
   constructor(private service:CourseServerService,service2:ApplicantServerService,private service3:AuthenticationService,private route: ActivatedRoute, private router: Router) { }
-  isLoggedin:boolean
+  isLoggedin:boolean = false;
+
+  role: string = null;
+  roleMessage: string = null;
 
   ngOnInit(): void {
     this.loadData();
-    this.isLoggedin=this.service3.isLoggedIn();
+    if(this.service3.isLoggedIn()) {
+      this.isLoggedin = true;
+      this.role = localStorage.getItem('role');
+      if(this.role != 'STAFF') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
+    //this.isLoggedin=this.service3.isLoggedIn();
 
   }
   header: string = "List of Courses";

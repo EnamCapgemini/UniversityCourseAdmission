@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/model/course';
 import { CourseServerService } from '../server-service/course-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-course-create',
@@ -12,10 +13,20 @@ export class CourseCreateComponent implements OnInit {
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
-  constructor(private service:CourseServerService,private route: ActivatedRoute, private router: Router) { }
+
+  role: string = null;
+  roleMessage: string = null;
+
+  constructor(private service:CourseServerService,private loginService:AuthenticationService,
+    private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    
+    if(this.loginService.isLoggedIn()) {
+      this.role = localStorage.getItem('role');
+      if(this.role != 'STAFF') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
   } createNew(data: Course) {
     this.service.addCourses(data).subscribe(
       (message) => {
@@ -36,7 +47,6 @@ export class CourseCreateComponent implements OnInit {
 
   }
   
-
   goBack(){
     this.router.navigate(["course-create"]);
   }

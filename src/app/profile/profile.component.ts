@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     if(this.authenticationService.isLoggedIn()) {
+      
       this.authenticationService.getUserDetails().subscribe(
         (result) => {
           this.userdetails = result;
@@ -31,6 +32,15 @@ export class ProfileComponent implements OnInit {
           
         }
       );
+
+      this.authenticationService.getRole().subscribe(
+        (result) => {
+          localStorage.setItem('role', result);
+        },
+        (fail) => {
+          console.log(fail);
+        }
+      )
     }
     else {
       this.errorMessage = "You have not logged in! Please Log in.";
