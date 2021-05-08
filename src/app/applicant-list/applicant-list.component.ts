@@ -14,10 +14,14 @@ export class ApplicantListComponent implements OnInit {
   constructor(private service: ApplicantServerService,private service2:AuthenticationService) { }
   isLoggedin:boolean;
   header: string = "List of Applicants";
-
+  role: string = null;
+  
   ngOnInit(): void {
     this.loadData();
-    this.isLoggedin=this.service2.isLoggedIn();
+    if(this.service2.isLoggedIn()) {
+      this.isLoggedin = true;
+      this.role = localStorage.getItem('role');
+    }
   }
   applicants: Applicant[];
   message: string = null;

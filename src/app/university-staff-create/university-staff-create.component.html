@@ -1,4 +1,4 @@
-<div class='staff'>
+<div *ngIf='roleMessage == null' class='staff'>
 
     <h3 style="text-align:center;color: mediumblue;"> Create New University Staff</h3>
     <hr>
@@ -71,4 +71,8 @@
             {{msg}}
         </p>
     </div>
+</div>
+
+<div *ngIf='roleMessage != null' class='alert alert-danger text-center'>
+    {{roleMessage}}
 </div>

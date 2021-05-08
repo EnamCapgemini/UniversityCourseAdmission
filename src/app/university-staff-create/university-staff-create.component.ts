@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UniversityStaffs } from 'src/model/universityStaffs';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-university-staff-create',
@@ -13,9 +14,19 @@ export class UniversityStaffCreateComponent implements OnInit {
   errorMessage: string = null;
   successMessage: string = null;
   p:number=1;
-  constructor(private service: UniversityStaffServerService, private route: ActivatedRoute, private router: Router) { }
+
+  role: string = null;
+  roleMessage: string = null;
+  
+  constructor(private service: UniversityStaffServerService, private loginService:AuthenticationService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    if(this.loginService.isLoggedIn()) {
+      this.role = localStorage.getItem('role');
+      if(this.role != 'ADMIN') {
+        this.roleMessage = ' Access Denied for  '+this.role;
+      }
+    }
   }
   roles: any[] = [
     { name: 'STAFF' },
