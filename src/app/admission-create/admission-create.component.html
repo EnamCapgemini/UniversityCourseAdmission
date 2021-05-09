@@ -1,4 +1,4 @@
-<div class='admission' *ngIf='roleMessage == null'>
+<div class='admission' *ngIf='roleMessage == null' [ngStyle]="setMyStyle()">
 
     <h3 style="text-align:center;color: mediumblue;"> Create New Admission</h3>
     <hr>
@@ -15,9 +15,9 @@
             <label for='courseId'>Course Id</label>
             <input id='courseId' class='form-control' type='text' ngModel name='courseId' #tcourseId='ngModel' required>
         </div>
-        <div *ngIf='tcourseId.touched && tcourseId.invalid'  class='alert alert-danger' >
+        <div *ngIf='tcourseId.touched && tcourseId.invalid' class='alert alert-danger'>
             <!--<div *ngIf='tcourseId.errors.required' class='alert alert-danger'>-->
-                Please enter course id. This field is must.
+            Please enter course id. This field is must.
             <!--</div>-->
         </div>
 
@@ -36,7 +36,7 @@
                 </option>
             </select>
         </div>
-          <button type='submit' class='btn btn-primary btn-block' [disabled]="admissionForm.invalid">Submit</button>
+        <button type='submit' class='btn btn-primary btn-block' [disabled]="admissionForm.invalid">Submit</button>
     </form>
 
     <p class='alert alert-success text-center' *ngIf='successMessage != null' (click)='successMessage=null'>

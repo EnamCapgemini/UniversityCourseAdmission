@@ -1,4 +1,4 @@
-<div class='applicant'>
+<div class='applicant' [ngStyle]="setMyStyle()">
 
     <h3 style="text-align:center;color: mediumblue;"> Create New Applicant</h3>
     <hr>
@@ -35,7 +35,7 @@
                 <option *ngFor='let role of roles' [value]="role.name">
                     {{role.name}}
                 </option>
-            </select> 
+            </select>
         </div>
         <div class="form-group">
             <label for="applicantFirstName">First Name</label>
