@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Admission } from 'src/model/admission';
 import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
 import { AdmissionCommiteeMemberServerService } from '../server-service/admission-commitee-member-server.service';
 
@@ -11,7 +12,7 @@ import { AdmissionCommiteeMemberServerService } from '../server-service/admissio
 export class AdmissionCommiteeMemberUpdateComponent implements OnInit {
 
   admissionCommiteeMember: AdmissionCommiteeMember = null;
-
+  admissionDetails:Admission=null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;

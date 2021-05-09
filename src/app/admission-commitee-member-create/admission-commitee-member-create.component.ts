@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdmissionCommiteeMember } from 'src/model/admissionCommiteeMember';
+import { UniversityStaffs } from 'src/model/universityStaffs';
 import { AdmissionCommiteeMemberServerService } from '../server-service/admission-commitee-member-server.service';
+import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -9,17 +12,20 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./admission-commitee-member-create.component.css']
 })
 export class AdmissionCommiteeMemberCreateComponent implements OnInit {
+  
 
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
   flag: boolean;
 
+  commiteeMember:AdmissionCommiteeMember=null;
+  staffs:UniversityStaffs;
   role: string = null;
   roleMessage: string = null;
 
-  constructor(private service: AdmissionCommiteeMemberServerService, private loginService:AuthenticationService) {
-
+  constructor(private service: AdmissionCommiteeMemberServerService,private staffService: UniversityStaffServerService, private loginService:AuthenticationService,private route: ActivatedRoute, private router: Router) {
+    
   }
 
   ngOnInit() {
@@ -29,9 +35,21 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
         this.roleMessage = ' Access Denied for  '+this.role;
       }
     }
-
+   
+    this.loadData();
   }
+  loadData(): void {
 
+    this.staffService.getStaffs().subscribe(
+      (data) => {
+        this.staffs = data;
+        this.errorMessage = null;
+      },
+      (failResponse) => {
+        this.errorMessage = failResponse.error.details;
+      }
+    )
+  }
   // roles: any[] = [
   //   { name: 'STAFF' },
   //   { name: 'COMMITEE' }
@@ -44,9 +62,11 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   //     this.flag = false;
   //   }
   // }
+  
+
 
   createNew(data: AdmissionCommiteeMember) {
-    this.service.addAdmissionCommiteeMember(data).subscribe(
+   this.service.addAdmissionCommiteeMember(data).subscribe(
       (message) => {
         this.successMessage = message;
         this.validationMessages = null;

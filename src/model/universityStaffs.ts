@@ -1,3 +1,5 @@
+import { Admission } from "./admission";
+
 
 
 export interface UniversityStaffs{

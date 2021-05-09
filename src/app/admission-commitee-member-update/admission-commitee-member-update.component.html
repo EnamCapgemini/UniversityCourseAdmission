@@ -13,6 +13,21 @@
                 <th>Admission Commitee Member Contact</th>
                 <td><input type='text' [(ngModel)]='admissionCommiteeMember.admissionCommiteeMemberContact'></td>
             </tr>
+            <tr *ngIf="admissionCommiteeMember.admission!=null">
+                <th>Admission Id</th>
+                <td ><input type='text' [(ngModel)]='admissionCommiteeMember.admission[0].admissionId' readonly></td>
+                <th>Admission Status</th>
+                <td ><input type='text' [(ngModel)]='admissionCommiteeMember.admission[0].status' readonly></td>
+                <th>Applied Course Id</th>
+                <td ><input type='text' [(ngModel)]='admissionCommiteeMember.admission[0].courseId' readonly></td>
+                
+            </tr>
+            <tr *ngIf="admissionCommiteeMember.admission!=null">
+                <th>Applied Applicant Id</th>
+                <td ><input type='text' [(ngModel)]='admissionCommiteeMember.admission[0].applicant.applicantId' readonly></td>
+
+            </tr>
+            
         </table>
         <button (click)='updated()' class='btn btn-success btn-block'>Update</button>
         <button (click)='goBack()' class='btn btn-primary btn-block'>Back</button>

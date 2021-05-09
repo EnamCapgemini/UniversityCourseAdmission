@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Admission } from 'src/model/admission';
 import { UniversityStaffs } from 'src/model/universityStaffs';
+import { AdmissionServerService } from '../server-service/admission-server.service';
 import { UniversityStaffServerService } from '../server-service/university-staff-server.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { UniversityStaffServerService } from '../server-service/university-staff
 export class UniversityStaffUpdateComponent implements OnInit {
   //staff: UniversityStaffs={staffId:0,username:"",password:"",role:""};
   staff: UniversityStaffs=null;
+  admissionDetails:Admission=null;
   validationMessages: string[] = null;
   errorMessage: string = null;
   successMessage: string = null;
@@ -22,7 +25,7 @@ export class UniversityStaffUpdateComponent implements OnInit {
   ];
 
  
-  constructor(private service: UniversityStaffServerService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: UniversityStaffServerService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
