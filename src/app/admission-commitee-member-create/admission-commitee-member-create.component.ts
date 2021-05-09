@@ -24,15 +24,17 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
   role: string = null;
   roleMessage: string = null;
 
+
   constructor(private service: AdmissionCommiteeMemberServerService,private staffService: UniversityStaffServerService, private loginService:AuthenticationService,private route: ActivatedRoute, private router: Router) {
     
+
   }
 
   ngOnInit() {
-    if(this.loginService.isLoggedIn()) {
+    if (this.loginService.isLoggedIn()) {
       this.role = localStorage.getItem('role');
-      if(this.role != 'COMMITEE' && this.role != 'ADMIN') {
-        this.roleMessage = ' Access Denied for  '+this.role;
+      if (this.role != 'COMMITEE' && this.role != 'ADMIN') {
+        this.roleMessage = ' Access Denied for  ' + this.role;
       }
     }
    
@@ -71,11 +73,12 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
         this.successMessage = message;
         this.validationMessages = null;
         this.errorMessage = null;
+        console.log(data)
       },
       (failure) => {
         this.successMessage = null;
         this.validationMessages = JSON.parse(failure.error).errors;
-        //this.errorMessage = JSON.parse(failure.error).errorMessage;
+        // this.errorMessage = JSON.parse(failure.error).message;
         this.errorMessage = JSON.parse(failure.error).details;
       }
 
@@ -83,5 +86,11 @@ export class AdmissionCommiteeMemberCreateComponent implements OnInit {
 
   }
 
-
+  setMyStyle() {
+    let styles = { 
+      'background':'linear-gradient(  #6dd5fa, #ffffff,#2980b9)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
+}
 }
