@@ -44,20 +44,19 @@
 
         <div class='form-group'>
             <label for='staffid'>Staff Id</label>
-            <!--<input type='text' id='staffid' class='form-control' ngModel name='staffId' #tstaffId='ngModel' required>-->
-            <select id='staffid' class="form-control" ngModel name='staffId' #tstaffId='ngModel' required>
+            <input type='text' id='staffid' class='form-control' ngModel name='staffId' #tstaffId='ngModel' required>
+            <!--<select id='staffid' class="form-control" ngModel name='staffId' #tstaffId='ngModel' required>
                 <option *ngFor="let s of staffs" [value]="s.staffId" >{{s.staffId}}</option>
-            </select>
+            </select>-->
+        </div>
+        <div *ngIf='tstaffId.touched && tstaffId.invalid' class='alert alert-danger'>
+            Please enter staff id. This field is must.
         </div>
     
 
 
 
         <div class='form-group'>
-
-            <label for='staffname'>Name</label>
-            <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel'
-                required minlength="6" >
 
             <label for='staffname'>Username</label>
             <input type='text' id='staffname' class='form-control' ngModel name='username' #tstaffname='ngModel' required minlength="6">
