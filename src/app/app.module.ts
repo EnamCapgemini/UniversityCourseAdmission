@@ -36,7 +36,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
-import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component'
+import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 
 
@@ -66,7 +67,8 @@ import { AdmissionDeleteComponent } from './admission-delete/admission-delete.co
     ChangePasswordComponent,
     AdmissionCommiteeMemberStatusComponent,
     CourseDeleteComponent,
-    AdmissionDeleteComponent
+    AdmissionDeleteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

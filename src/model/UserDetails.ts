@@ -2,7 +2,7 @@
 // from backend server
 
 export interface UserDetails {
-    username: String;
-    password: String;
-    role: String;
+    username: string;
+    password: string;
+    role: string;
 }

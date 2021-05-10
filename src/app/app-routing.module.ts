@@ -29,9 +29,13 @@ import { AdmissionUpdateComponent } from './admission-update/admission-update.co
 import { AdmissionCommiteeMemberStatusComponent } from './admission-commitee-member-status/admission-commitee-member-status.component';
 import { CourseDeleteComponent } from './course-delete/course-delete.component';
 import { AdmissionDeleteComponent } from './admission-delete/admission-delete.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
 
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  
   { path: 'staff-create', component: UniversityStaffCreateComponent, canActivate: [AuthguardService] },
   { path: 'staff-list', component: UniversityStaffListComponent, canActivate: [AuthguardService] },
   { path: 'staff-update/:staffId', component: UniversityStaffUpdateComponent, canActivate: [AuthguardService] },
@@ -69,6 +73,7 @@ const routes: Routes = [
   { path: 'admission-delete/:admissionId', component: AdmissionDeleteComponent,canActivate: [AuthguardService] },
   { path: 'admission-update/:admissionId', component: AdmissionUpdateComponent,canActivate: [AuthguardService] },
 
+  { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ];
 
 

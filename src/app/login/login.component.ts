@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from "@angular/router";
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService) { }
+    private authenticationService: AuthenticationService,
+    ) { }
 
     ngOnInit() {
       if(this.authenticationService.isLoggedIn()) {
@@ -30,13 +32,19 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(credentials)
       .subscribe(result => {
         this.router.navigate(['/profile']);
-        
       },
          fail => {
           this.invalidLogin = true;
           this.errorMessage = fail.error.details;
         }
       );
+  }
 
+  setMyStyle() {
+    let styles = { 
+      'background':'linear-gradient(  #6dd5fa, #ffffff,#2980b9)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
   }
 }
