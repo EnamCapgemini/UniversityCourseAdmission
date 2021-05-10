@@ -29,8 +29,8 @@ export class UniversityStaffCreateComponent implements OnInit {
     }
   }
   roles: any[] = [
-    { name: 'STAFF' },
-    { name: 'COMMITEE' }
+    { name: 'STAFF' }
+    //{ name: 'COMMITEE' }
   ];
 
   createNew(data: UniversityStaffs) {
