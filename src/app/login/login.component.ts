@@ -10,8 +10,12 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
+  // This variable is used to hide/show the user login form according to user loggedin status
   invalidLogin: boolean;
-  message: string;
+
+  // error message of backend response is stored here
+  errorMessage: string;
+
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService) { }
@@ -25,13 +29,12 @@ export class LoginComponent implements OnInit {
   signIn(credentials) {
     this.authenticationService.login(credentials)
       .subscribe(result => {
-        //console.log(result);
         this.router.navigate(['/profile']);
         
       },
          fail => {
           this.invalidLogin = true;
-          this.message = fail.error.details;
+          this.errorMessage = fail.error.details;
         }
       );
 

@@ -49,7 +49,7 @@ export class AdmissionListComponent implements OnInit {
       (data) => {
         this.admissions = data;
         this.errorMessage = null;
-        console.log(data);
+        //console.log(data);
       },
       (failResponse) => {
         this.errorMessage = failResponse.error.details;

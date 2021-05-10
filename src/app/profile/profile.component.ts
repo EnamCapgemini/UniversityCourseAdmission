@@ -10,10 +10,16 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class ProfileComponent implements OnInit {
 
+  // UserDetails is an interface in which current loggedin user details will be stored
+  // that will come from the backend using getDetails() of AuthenticationService service
   userdetails: UserDetails = null;
 
+  // error message of backend response is stored here
   errorMessage: String = null;
+
+  // success message of backend response is stored here
   successMessage:string=null;
+  
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService

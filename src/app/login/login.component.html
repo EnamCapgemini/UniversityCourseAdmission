@@ -19,5 +19,5 @@
     </div>
     <button type="submit" class="btn btn-primary btn-block" [disabled]='form.invalid'>Sign in</button>
   </form>
-  <div *ngIf="invalidLogin" class="alert alert-danger">{{message}}</div>
+  <div *ngIf="invalidLogin" class="alert alert-danger">{{errorMessage}}</div>
 </div>
