@@ -45,8 +45,8 @@
         <div class='form-group'>
             <label for='staffid'>Staff Id</label>
             <input type='text' id='staffid' class='form-control' ngModel name='staffId' #tstaffId='ngModel' required>
-            <!--<select id='staffid' class="form-control" ngModel name='staffId' #tstaffId='ngModel' required>
-                <option *ngFor="let s of staffs" [value]="s.staffId" >{{s.staffId}}</option>
+            <!--<select  id='staffid' class="form-control" ngModel name='staffId' #tstaffId='ngModel' required>
+                <option *ngFor="let s of staffs"  [value]="s.staffId" ><i *ngIf="s.role=='COMMITEE'">{{s.staffId}}</i></option>
             </select>-->
         </div>
         <div *ngIf='tstaffId.touched && tstaffId.invalid' class='alert alert-danger'>
