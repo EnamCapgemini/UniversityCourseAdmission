@@ -12,7 +12,10 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  message:any;
+  // Success message of backend response is stored here after loggout
+  successMessage:any;
+
+  // error message of backend response is stored here if loggout failed
   errorMessage:any;
 
   constructor(authService:AuthenticationService) {
@@ -20,7 +23,7 @@ export class LogoutComponent implements OnInit {
       authService.logout().subscribe(
         (result) => {
           localStorage.clear();
-          this.message="You have successfully logged out !";
+          this.successMessage="You have successfully logged out !";
         },
         (error) => {
           this.errorMessage= error.error;

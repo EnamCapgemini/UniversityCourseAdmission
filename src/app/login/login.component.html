@@ -1,4 +1,4 @@
-<div class='container' style='width:400px;float:left;'>
+<div class='container' [ngStyle]="setMyStyle()" style='width:400px;float:center;'>
   <form style="align-content: center;" #form="ngForm" (ngSubmit)="signIn(form.value)">
     <h2 style="color: mediumblue;">Login Form</h2>
     <div class="form-group">
@@ -19,5 +19,5 @@
     </div>
     <button type="submit" class="btn btn-primary btn-block" [disabled]='form.invalid'>Sign in</button>
   </form>
-  <div *ngIf="invalidLogin" class="alert alert-danger">{{message}}</div>
+  <div *ngIf="invalidLogin" class="alert alert-danger">{{errorMessage}}</div>
 </div>

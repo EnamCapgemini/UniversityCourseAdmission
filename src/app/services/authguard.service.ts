@@ -12,6 +12,7 @@ export class AuthguardService {
     private authenticationService: AuthenticationService
 ) { }
 
+// AuthGuard method to check valid user to access requested service
 canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     
     if (this.authenticationService.isLoggedIn()) {

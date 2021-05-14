@@ -9,8 +9,13 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  message: string = null;
+  // Response message of backend server is stored here after successfully changed password
+  successMessage: string = null;
+
+  // Response message of backend server is stored here after changed password failed
   errorMessage: string = null;
+
+  // If a user is loggedin or not checking
   invalidLogin: boolean = false;
 
   constructor(
@@ -23,15 +28,25 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
 
+  // This method is called on the submit of the Submit button of change password form in html template
+  // and this method calls change password of Service
   changePassword(credentials) {
     this.authenticationService.changePassword(credentials).subscribe(
         (result) => {
-        this.message = result;      
+        this.successMessage = result;      
       },
          (fail) => {
           this.invalidLogin = true;
           this.errorMessage = fail.error.details;
         }
       );
+  }
+
+  setMyStyle() {
+    let styles = { 
+      'background':'linear-gradient(  #6dd5fa, #ffffff,#2980b9)',
+      'background-repeat':'no-repeat'
+    };
+    return styles;
   }
 }
